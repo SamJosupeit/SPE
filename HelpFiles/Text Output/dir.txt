@@ -1,0 +1,10 @@
+Convert-SPEStringToBlock.html
+Convert-SPETextToFramedBlock.html
+dir.txt
+New-SPEInfoHeader.html
+Out-SPESpeakText.html
+Show-SPEInfoHeader.html
+Show-SPEQuestion.html
+Show-SPETextArray.html
+Show-SPETextLine.html
+Wait-SPELoop.html
