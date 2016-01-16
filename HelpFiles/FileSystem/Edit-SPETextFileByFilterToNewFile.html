@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erfasst eine Text-Datei, überprüft den Text zeilenweise, ob diese bestimmte Filterbegriff enthalten und schreibt die Zeilen in eine neue Datei, wenn dem nicht so ist.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Edit-SPETextFileByFilterToNewFile [-sourcePath] &lt;String&gt; [-targetPath] &lt;String&gt; [-filterStringArray] &lt;Array&gt; [-returnNewFile] &lt;SwitchParameter&gt; [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Edit-SPETextFileByFilterToNewFile [-sourcePath] &lt;String&gt; [-targetPath] &lt;String&gt; [-filterStringArray] &lt;Array&gt; [-returnNewFile] &lt;SwitchParameter&gt; [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erfasst eine Text-Datei, überprüft den Text zeilenweise, ob diese bestimmte Filterbegriff enthalten und schreibt die Zeilen in eine neue Datei, wenn dem nicht so ist. Mit diesem Cmdlet lassen sich zum Beispiel umfangreiche Log-Datei vor-filtern und von unnötigen Meldungen bereinigen.</p>
@@ -186,7 +185,6 @@ $Filter = @(&quot;Peter&quot;,&quot;ist Berater&quot;)
 $filteredText = Edit-SPETextFileByFilterToNewFile -sourcePath $src -targetPath $trg -filterStringArray $Filter -returnNewFile</pre>
 <p style="margin-left: 40px;">Die Datei &quot;C:\QuellText.txt&quot; wird auf die Filter-Strings &quot;Peter&quot; und &quot;ist Berater&quot; geprüft, Zeilen, die diese Filter-Strings nicht enthalten, werden in die Datei &quot;C:\gefilterterText.txt&quot; geschrieben.
 Nach Abschluss wird die neue Datei als Object ausgegeben</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

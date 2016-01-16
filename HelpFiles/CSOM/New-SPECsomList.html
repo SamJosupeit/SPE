@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erzeugt eine neue SharePoint-(Online-)Liste</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">New-SPECsomList [-Web] &lt;Web&gt; [-ListTitle] &lt;String&gt; [-ListDescription] &lt;String&gt; [-ListTemplateId] &lt;Int32&gt; [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">New-SPECsomList [-Web] &lt;Web&gt; [-ListTitle] &lt;String&gt; [-ListDescription] &lt;String&gt; [-ListTemplateId] &lt;Int32&gt; [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erzeugt eine neue SharePoint-(Online-)Liste</p>
@@ -191,7 +190,6 @@ $creds = Get-SPESPOnlineCredentials
 #Get the Website-Object
 $web = Get-SPECsomWeb -Url &quot;http://some.sharepoint.site&quot; -Credentials $creds -SPO       $list = New-SPECsomList -Web $web -ListTitle &quot;MyNewList&quot; -ListDescription &quot;This is my new list&quot; -ListTemplateId 101</pre>
 <p style="margin-left: 40px;">Erzeugt eine neue Liste vom Type &quot;DocumentLibrary&quot; in der Website &quot;http://some.sharepoint.site&quot;</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

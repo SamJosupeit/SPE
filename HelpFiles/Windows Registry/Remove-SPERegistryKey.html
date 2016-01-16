@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Löscht einen Registry-Key mit dem angegebenen Namen unter dem angegebenen Pfad</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Remove-SPERegistryKey [[-path] &lt;String&gt;] [[-key] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Remove-SPERegistryKey [[-path] &lt;String&gt;] [[-key] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Löscht einen Registry-Key mit dem angegebenen Namen unter dem angegebenen Pfad</p>
@@ -132,7 +131,6 @@ about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">
 <pre style="margin-left: 40px;">PS C:\&gt; Set-SPERegistryKey -path &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; -key &quot;Restart-AndResume&quot; -value &quot;c:\ps1\autostart.ps1&quot;
 Remove-SPERegistryKey -path &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; -key &quot;Restart-AndResume&quot;</pre>
 <p style="margin-left: 40px;">Remove-SPERegistryKey enfernt den (z.B. mit Set-SPERegistryKey erstellten) Schlüssel &quot;Restart-AndResume&quot; aus dem Pfad &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; der Windows Registry.</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

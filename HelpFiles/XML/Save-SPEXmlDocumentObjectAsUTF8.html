@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Speichert ein XmlDocument in eine XML-Datei mit UTF-8-Encoding</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Save-SPEXmlDocumentObjectAsUTF8 [-XmlDocumentObject] &lt;XmlDocument&gt; [-Path] &lt;String&gt; [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Save-SPEXmlDocumentObjectAsUTF8 [-XmlDocumentObject] &lt;XmlDocument&gt; [-Path] &lt;String&gt; [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Speichert ein XmlDocument in eine XML-Datei mit UTF-8-Encoding. Das ist erforderlich, damit diese XML-Datei im späteren Verlauf sauber von weiteren Cmdlets ausgelesen werden kann, da grad deutsche Umlaute ansonsten in Steuerzeichen umgewandelt werden, die nicht mehr lesbar sind.</p>
@@ -130,7 +129,6 @@ about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">
 <h3>Beispiel 1 - Allgemeine Benutzung</h3>
 <pre style="margin-left: 40px;">PS C:\&gt; [xml]$xmlDoc =  Get-Content &quot;c:\file.xml&quot;
 Save-SPEXmlDocumentObjectAsUTF8 -XmlDocumentObject $xmlDoc -Path &quot;c:\newfile.xml&quot;</pre>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Fängt das Abbrechen eines laufenden Scripts durch Ctrl+C ab und erlaubt es, danach zusätzlichen Code auszuführen.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Exit-SPEOnCtrlC [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Exit-SPEOnCtrlC [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Fängt das Abbrechen eines laufenden Scripts durch Ctrl+C ab und erlaubt es, danach zusätzlichen Code auszuführen. Wird innerhalb der SPE-Standard-Scripts benutzt, um das Abbrechen des Scripts im Log zu vermerken. Um diese Funktion nutzbar zu machen, sollte sie in jeder Schleife des Scripts mindestens einmal eingesetzt werden.</p>
@@ -100,7 +99,6 @@ Trap [ExecutionEngineException]{
   #endregion
 }</pre>
 <p style="margin-left: 40px;">Erfasst bei jedem Schleifendurchgang, ob Ctrl-C gedrückt wurde. Falls ja wird das Script an dieser Stelle abgebrochen und eine Exception ausgeworfen, die mit &;39;Trap [ExecutionEngineException]&;39; aufgefangen wird. Dort kann dann weiterführender Code, wie z.B. ein Logeintrag, ausgeführt werden.</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

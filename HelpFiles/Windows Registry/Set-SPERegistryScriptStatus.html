@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Trägt für das aktuelle SPE-Standard-Script einen Autostart-Eintrag in die Windows Registry mit Step-Vermerk ein.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Set-SPERegistryScriptStatus [[-step] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Set-SPERegistryScriptStatus [[-step] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Trägt für das aktuelle SPE-Standard-Script einen Autostart-Eintrag in die Windows Registry mit Step-Vermerk ein. Diese Funktion ist für Scripts gedacht, die während der Ausführung mehrmals den Computer neu starten müssen, wie dies z.B. bei Installations-Scripts der Fall ist.</p>
@@ -131,7 +130,6 @@ about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">
 <pre style="margin-left: 40px;">PS C:\&gt; Set-SPERegistryScriptStatus -step &quot;Schritt 1&quot;</pre>
 <p style="margin-left: 40px;">In der den SPE-Standard-Scripts zugehörigen Config-Datei Config.ps1 sind die globalen Variablen &quot;$global:RegRunKey&quot;(Wert=&quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot;) und &quot;$global:restartKey&quot;(Wert=&quot;SPE-Restart&quot;) vordefiniert. Diese werden vom Cmdlet Set-RegistryStatus dazu benutzt, um im Autostart-Eintrag der Windows-Registry das aktuelle Script in Verbindung mit einem Step-Vermerk zu hinterlegen. Somit kann das Script nach einem erfolgten Reboot an der entsprechenden Stelle fortgesetzt werden. Dies erfordert allerdings einen entsprechenden Aufbau des Scripts.
 </p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

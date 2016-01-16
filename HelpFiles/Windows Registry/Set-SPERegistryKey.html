@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erstellt einen Registry-Key mit dem angegebenen Namen unter dem angegebenen Pfad</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Set-SPERegistryKey [[-path] &lt;String&gt;] [[-key] &lt;String&gt;] [[-value] &lt;String&gt;] [-Reboot] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Set-SPERegistryKey [[-path] &lt;String&gt;] [[-key] &lt;String&gt;] [[-value] &lt;String&gt;] [-Reboot] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erstellt einen Registry-Key mit dem angegebenen Namen unter dem angegebenen Pfad mit dem angegebenen Wert</p>
@@ -184,7 +183,6 @@ about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">
 <pre style="margin-left: 40px;">PS C:\&gt; $powershell = (Join-Path $env:windir &quot;system32\WindowsPowerShell\v1.0\powershell.exe&quot;)
 SetRegistry-Key -path &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; -key &quot;Restart-AndResume&quot; -value &quot;$powershell c:\ps1\autostart.ps1&quot;</pre>
 <p style="margin-left: 40px;">Erstellt in der Windows Registry unter dem Pfad &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; einen Schlüssel &quot;Restart-AndResume&quot; mit dem Wert &quot;C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe C:\ps1\autostart.ps1&quot;. Das führt dazu, dass das Script &quot;C:\ps1\autostart.ps1&quot; per Autostart beim nächsten Reboot ausgeführt wird.</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

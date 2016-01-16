@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erhöht die angegebene Guid um den Wert 1.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Set-SPEGuidIncrement [[-guid] &lt;Guid&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Set-SPEGuidIncrement [[-guid] &lt;Guid&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erhöht die angegebene Guid um den Wert 1. Ist keine Guid angegeben oder ist diese NULL, wird eine neue Guid mit Nullen erzeugt und widergegeben. Da eine CorrelationID eine GUID ist, kann diese nicht einfach mit einem +1 inkrementiert werden, was dann durch dieses Cmdlet erfolgt.</p>
@@ -109,7 +108,6 @@ Da eine CorrelationID eine GUID ist, kann diese nicht einfach mit einem +1 inkre
 Guid
 ----
 00000000-0000-0000-0000-000000000000
-00000000-0000-0000-0000-000000000000
 </pre>
 <p style="margin-left: 40px;">Erstellt eine neue Guid</p>
 <h3>Beispiel 2 - bestehende Guid erh�hen</h3>
@@ -121,11 +119,8 @@ $newGuid</pre>
 Guid
 ----
 00000000-0000-0000-0000-000000000000
-00000000-0000-0000-0000-000000000000
-00000000-0000-0000-0000-000000000000
 Guid
 ----
-00000000-0000-0000-0000-000000000001
 00000000-0000-0000-0000-000000000001
 </pre>
 <p style="margin-left: 40px;">Erstellt im ersten Schritt eine neue Guid, die im zweiten Schritt um 1 erhöht wird.</p>
@@ -136,10 +131,8 @@ $newGuid</pre>
 <pre style="margin-left: 40px;">Guid
 ----
 00000001-0000-0000-0001-000000000000
-00000001-0000-0000-0001-000000000000
 </pre>
 <p style="margin-left: 40px;">Auch ein Überlauf wird berücksichtigt</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

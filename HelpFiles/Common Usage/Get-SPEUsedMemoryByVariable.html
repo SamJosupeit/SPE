@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erzeugt eine Variable mit dem angegebenen Namen und Befehl und legt diese im Speicher zu weiteren Benutzung ab. Gleichzeitig wird der Speicherverbrauch der Variable Byte-Wert ausgegeben.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Get-SPEUsedMemoryByVariable [-VariableName] &lt;String&gt; [-CommandString] &lt;String&gt; [[-Size] &lt;String&gt; {Byte | Kilobyte | Megabyte | Gigabyte} ] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Get-SPEUsedMemoryByVariable [-VariableName] &lt;String&gt; [-CommandString] &lt;String&gt; [[-Size] &lt;String&gt; {Byte | Kilobyte | Megabyte | Gigabyte} ] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erzeugt eine Variable mit dem angegebenen Namen und Befehl und legt diese im Speicher zu weiteren Benutzung ab. Gleichzeitig wird der Speicherverbrauch der Variable Byte-Wert ausgegeben.<br />
@@ -163,11 +162,9 @@ about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">
 <pre style="margin-left: 40px;">PS C:\&gt; Get-SPEUsedMemoryByVariable -VariableName testVar -CommandString &quot;get-location&quot;
 $testvar</pre>
 <pre style="margin-left: 40px;">7,1171875
-<pre style="margin-left: 40px;">7,1171875
 Path
 ----
 C:\</pre>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

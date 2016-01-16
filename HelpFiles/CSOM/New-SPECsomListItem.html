@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erstellt ein neues Item in einer SharePoint-(Online-)Liste. </p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">New-SPECsomListItem [-List] &lt;List&gt; [[-FieldValues] &lt;ArrayList&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">New-SPECsomListItem [-List] &lt;List&gt; [[-FieldValues] &lt;ArrayList&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erstellt ein neues Item in einer SharePoint-(Online-)Liste. Dazu müssen die Werte der einzelnen Felder als System.Web.UI.Pair-Werte in einer ArrayList abgelegt sein und übergeben werden.</p>
@@ -149,7 +148,6 @@ $FieldValues.Add($Field1)
 $FieldValues.Add($Field2)
 $newListItem = New-SPECsomListItem -List $list -FieldValues $FieldValues</pre>
 <p style="margin-left: 40px;">Erzeugt ein neues List-Item in der Liste &quot;MyList&quot; innerhalb der Website &quot;http://some.sharepoint.site&quot; und gibt das erzeugte Item zurück. Field-Attribute müssen als System.Web.UI.Pair-Objects (Schema &quot;Name&quot; - &quot;Wert&quot;) innerhalb einer System.Collections.ArrayList übergeben werden.</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

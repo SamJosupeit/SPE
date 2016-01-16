@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Ermittelt den BaseType-Name des angegebenen Objekts und gibt diesen als String aus</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Get-SPEBaseTypeNameFromObject [[-object] &lt;Object&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Get-SPEBaseTypeNameFromObject [[-object] &lt;Object&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Ermittelt den BaseType-Name des angegebenen Objekts und gibt diesen als String aus. Dies dient dazu, um z.B. bei automatisch generierten Arrays zu ermitteln, ob es sich tatsächlich um ein Array mit mehreren Items handelt oder um eines mit nur einem Item, dessen Object-Type dann gerne schon mal statt [System.Array] in den Type des Items (zb.String) umgewandelt wird, was dann bei Foreach-Object-Schleifen für Probleme sorgen kann.</p>
@@ -120,7 +119,6 @@ XmlElement</pre>
 <pre style="margin-left: 40px;">PS C:\&gt; [String[]]$strArray2 = &quot;1&quot;,&quot;2&quot;,&quot;3&quot;
 Get-SPEBaseTypeNameFromObject -object $strArray2</pre>
 <pre style="margin-left: 40px;">Array</pre>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

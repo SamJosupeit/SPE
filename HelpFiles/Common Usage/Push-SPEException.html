@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Schreibt Message und InnerException des CATCH-Blocks in das Log. Bei Ausführung innerhalb eines Scripts wird auch der Scriptname und die Zeilennummer des Aufrufs ausgegeben, um so den zum ausgelösten CATCH-Block zugehörigen TRY-Block einfacher zu ermitteln.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Push-SPEException [[-list] &lt;String&gt;] [[-web] &lt;String&gt;] [[-site] &lt;String&gt;] [[-exMessage] &lt;String&gt;] [[-innerException] &lt;String&gt;] [[-info] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Push-SPEException [[-list] &lt;String&gt;] [[-web] &lt;String&gt;] [[-site] &lt;String&gt;] [[-exMessage] &lt;String&gt;] [[-innerException] &lt;String&gt;] [[-info] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Schreibt Message und InnerException des CATCH-Blocks in das Log. Bei Ausführung innerhalb eines Scripts wird auch der Scriptname und die Zeilennummer des Aufrufs ausgegeben, um so den zum ausgelösten CATCH-Block zugehörigen TRY-Block einfacher zu ermitteln.</p>
@@ -245,14 +244,12 @@ catch
   $info = &quot;Fehler bei Pr�fung xy&quot;
   Push-SPEException -list $list -web $web -site $site -exMessage $exMessage -innerException $innerException -info $info
 }
-}
 </pre>
 <p style="margin-left: 40px;">Push-SPEException erzeugt einen Block mit detaillierten Fehlermeldungen in der Ausgabe.
 $list entspricht hier einem Microsoft.SharePoint.List-Object
 $web entspricht hier einem Microsoft.SharePoint.Website-Object
 $site entspricht hier einem Microsoft.SharePoint.SiteCollection-Object
 Bei Benutzung der web- und site-Parameter wird die jeweils zugehörige URL im Log ausgegeben, der list-Parameter gibt den Title der Liste aus.</p>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

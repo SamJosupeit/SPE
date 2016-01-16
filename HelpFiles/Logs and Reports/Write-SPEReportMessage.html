@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Übernimmt eine Text-Message mit weiteren Parametern, um diese in die SPE-Standard-Script-Reportdateien zu schreiben.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Write-SPEReportMessage [[-level] &lt;String[]&gt; {Critical | High | Medium | Verbose | VerboseEx} ] [[-area] &lt;String&gt; {ListView | ViewField | ListField | Script | misc | ContentType} ] [[-category] &lt;String&gt; {Added | Removed | Started | Stopped | Aborted | Adding | Removing | Determining} ] [[-CorrelationId] &lt;Guid&gt;] [[-eventId] &lt;String&gt;] [[-process] &lt;String&gt;] [[-thread] &lt;String&gt;] [[-message] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Write-SPEReportMessage [[-level] &lt;String[]&gt; {Critical | High | Medium | Verbose | VerboseEx} ] [[-area] &lt;String&gt; {ListView | ViewField | ListField | Script | misc | ContentType} ] [[-category] &lt;String&gt; {Added | Removed | Started | Stopped | Aborted | Adding | Removing | Determining} ] [[-CorrelationId] &lt;Guid&gt;] [[-eventId] &lt;String&gt;] [[-process] &lt;String&gt;] [[-thread] &lt;String&gt;] [[-message] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Übernimmt eine Text-Message mit weiteren Parametern, um diese in die SPE-Standard-Script-Reportdateien zu schreiben. Für den Einsatz der ULS-Reports werden alle Parameter genutzt, die aber größtenteils mit Default-Werten versehen sind.</p>
@@ -288,7 +287,6 @@ about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">
 <pre style="margin-left: 40px;">PS C:\&gt;  $scriptCorrId = $global:InitialCorrelationIDs.($Scriptname) #Wird in Config.ps1 definiert
  $global:CorrelationId = $scriptCorrId
 Write-SPELogMessage -level &quot;Critical&quot; -area &quot;Script&quot; -category &quot;Aborted&quot; -message &quot;Script has been aborted. Check Log(s)&quot; -CorrelationId $scriptCorrId</pre>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>

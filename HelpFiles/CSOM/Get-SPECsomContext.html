@@ -7,7 +7,6 @@
 <p style="margin-left: 40px;">Erfasst den CSOM-Context einer SharePoint (Online) bezogenen URL in Bezug auf die angegebenen Credentials und gibt diesen aus.</p>
 <h2><strong>Syntax</strong></h2>
 <pre style="margin-left: 40px;">Get-SPECsomContext [-Url] &lt;String&gt; [[-Credentials] &lt;PSCredential&gt;] [-SPO] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
-<pre style="margin-left: 40px;">Get-SPECsomContext [-Url] &lt;String&gt; [[-Credentials] &lt;PSCredential&gt;] [-SPO] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
 </pre>
 <h2><strong>Description</strong></h2>
 <p style="margin-left: 40px;">Erfasst den CSOM-Context einer SharePoint (Online) bezogenen URL in Bezug auf die angegebenen Credentials. Da bei SharePoint Online die Credentials anders verarbeitet werden als bei einem OnPremise-SharePoint, ist für SharePoint-Online zusätzlich der Switch SPO zu setzen.</p>
@@ -163,7 +162,6 @@ $ctx = Get-SPECsomContext -Url &quot;http://some.sharepoint.site&quot; -Credenti
 $creds = Get-Credential 
 #Get the Website-Context
 $ctx = Get-SPECsomContext -Url &quot;http://some.sharepoint.site&quot; -Credentials $creds -SPO</pre>
-<h2><strong>Related links</strong></h2>
 <h2><strong>Related links</strong></h2>
 </body>
 </html>
