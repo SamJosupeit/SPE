@@ -1,0 +1,322 @@
+<h1 style="text-align: center;"><strong>Import-SPECsomDLLs</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Import-SPECsomDLLs importiert die für das Client Site Object Model (CSOM) erforderlichen SharePoint-DLLs aus dem angegeben Ordner.</p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">Import-SPECsomDLLs [[-Path] &lt;String&gt;] [-UseDocumentManagement] [-UsePublishing] [-UseSearch] [-UseSearchApplications] [-UseServerRuntime] [-UseTaxonomy] [-UseUserProfiles] [-UseWorkflowServices] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+<pre style="margin-left: 40px;">Import-SPECsomDLLs [[-Path] &lt;String&gt;] [-UseDocumentManagement] [-UsePublishing] [-UseSearch] [-UseSearchApplications] [-UseServerRuntime] [-UseTaxonomy] [-UseUserProfiles] [-UseWorkflowServices] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Import-SPECsomDLLs importiert die für das Client Site Object Model (CSOM) erforderlichen SharePoint-DLLs aus dem angegeben Ordner oder, bei leerem PATH-Parameter aus dem Ordner &quot;SharePointDLLS&quot; im Module-Verzeichnis des SPE-Modules.<br />
+Es werden grundsätzlich die beiden DLLs &quot;Microsoft.SharePoint.Client und Microsoft.SharePoint.Client.Runtime geladen, weitere können aber als Switch zusätzlich importiert werden.<br />
+</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-Path</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Pfad zum Ordner mit den DLLs</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>[Module-Ordner]\SharePointDLLs</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseDocumentManagement</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.DocumentManagement</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UsePublishing</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.Publishing</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseSearch</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.Search</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseSearchApplications</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.Search.Applications</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseServerRuntime</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.ServerRuntime</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseTaxonomy</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.Taxonomy</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseUserProfiles</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.UserProfiles</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-UseWorkflowServices</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Importiert zusätzlich die DLL Microsoft.SharePoint.Client.WorkflowServices</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<h2><strong>Examples</strong></h2>
+<h3>Beispiel 1 - Allgemeine Benutzung</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; $Path = &quot;C:\SharePointDLLs\&quot;
+Import-SPECsomDLLs -Path $Path</pre>
+<p style="margin-left: 40px;">Importiert CSOM-Client- und CSOM-ClientRuntime-DLLs</p>
+<h3>Beispiel 2 - Zus�tzlich mit Publishing</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; $Path = &quot;C:\SharePointDLLs\&quot;
+Import-SPECsomDLLs -Path $Path -UsePublishing</pre>
+<p style="margin-left: 40px;">Importiert CSOM-Client- und CSOM-ClientRuntime- und zusätzlich die Publishing-DLL</p>
+<h3>Beispiel 3 - Laden der DLLs aus Module-Ordner</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; Import-SPECsomDLLs</pre>
+<p style="margin-left: 40px;">Importiert CSOM-Client- und CSOM-ClientRuntime aus dem DLL-Ordner im Module-Ordner</p>
+<h2><strong>Related links</strong></h2>
+<h2><strong>Related links</strong></h2>

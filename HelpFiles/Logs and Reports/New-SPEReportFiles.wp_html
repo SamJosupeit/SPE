@@ -1,0 +1,102 @@
+<h1 style="text-align: center;"><strong>New-SPEReportFiles</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Erzeugt neue Reportfiles für PSE-Standard-Scripts</p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">New-SPEReportFiles [-RecreateULS] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+<pre style="margin-left: 40px;">New-SPEReportFiles [-RecreateULS] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Erzeugt neue Reportfiles für PSE-Standard-Scripts. Je nach Einstellung im Config-Script wird eine normale Text-Reportdatei und/oder eine durch den ULS-Viewer lesbare ULS-Reportdatei erzeugt. Dieses Cmdlet wird vom Cmdlet Get-SPEOrSetReportFiles benutzt, um neue Reportdateien zu erzeugen.<br />
+Die Text-Reportdateien werden nach dem Schema &quot;Report_&quot; + $ScriptName + &quot;_&quot; + $StringDateTime + &quot;.log&quot; benannt, die ULS-Reportdateien nach dem Schema [ComputerName] + &quot;-&quot; + $StringDateTime + &quot;.log&quot;, wie dies auch im SharePoint-Bereich der Fall ist. Das Namensschema der ULS-Dateien ist so erforderlich, um dem ULs-Viewer den sog. Runtime Feed zu ermöglichen, um so live die auftretenden Meldungen verfolgen zu können. Zur Ablage der Reportdateien wird innerhalb des Script-Ordners durch das Cmdlet Get-SPEOrSetReportFiles ein Ordner &quot;Reports&quot; erzeugt</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-RecreateULS</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Wenn gesetzt, wird das ULS-Reportfile neu erstellt. Dies erfolgt automatisch, wenn die aktuelle ULS-Reportdatei älter als die voreingestellte Zeit(maxAgeOfULSFile) oder größer als die voreingestellte Größe(maxSizeOfULSFile) ist.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<h2><strong>Examples</strong></h2>
+<h2><strong>Related links</strong></h2>
+<h2><strong>Related links</strong></h2>

@@ -1,0 +1,118 @@
+<h1 style="text-align: center;"><strong>Show-SPEQuestion</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Gibt die angegebene Frage mit einem InfoHeader aus. Gleichzeitig wird der String auf die Breite des InfoHeaders zurecht gebrochen.</p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">Show-SPEQuestion [[-text] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+<pre style="margin-left: 40px;">Show-SPEQuestion [[-text] &lt;String&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Gibt die angegebene Frage mit einem InfoHeader aus und wartet dann auf eine [STRING]-Eingabe, die in eine Variable umgeleitet werden kann. Gleichzeitig wird der String auf die Breite des InfoHeaders zurecht gebrochen.</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-text</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Text der als Frage ausgegeben wird</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<h2><strong>Examples</strong></h2>
+<h3>Beispiel 1 - Allgemeine Benutzung</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; $zahl = Ask-Question -text &quot;Wieviel?&quot;</pre>
+<pre style="margin-left: 40px;">#########################################
+#                                       #
+# Firmenname                            #
+#                                       #
+#########################################
+#                                       #
+# Das ist ein Powershell-Script, das    #
+# eine ganz bestimmte Funktion erf�llen #
+# soll.                                 #
+#                                       #
+#########################################
+# Start  : 29.10.2015 13:34:06          #
+# Aktuell: 29.10.2015 13:34:42          #
+# Dauer  : 00:00:36.0380093             #
+# Wieviel? _</pre>
+<h2><strong>Related links</strong></h2>
+<h2><strong>Related links</strong></h2>

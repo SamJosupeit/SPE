@@ -1,0 +1,163 @@
+<h1 style="text-align: center;"><strong>Get-SPECsomWeb</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Erfasst ein CSOM-Website-Object anhand von URL und Credentials und gibt dieses aus</p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">Get-SPECsomWeb [-Url] &lt;String&gt; [-Credentials] &lt;PSCredential&gt; [-SPO] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+<pre style="margin-left: 40px;">Get-SPECsomWeb [-Url] &lt;String&gt; [-Credentials] &lt;PSCredential&gt; [-SPO] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Erfasst ein CSOM-Website-Object anhand von URL und Credentials und gibt dieses aus</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-Url</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">URL der Website</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-Credentials</strong> <em style="font-weight: 100;">&lt;PSCredential&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Credentials-Object des zu verbindenden Users</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-SPO</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Switch, um die Credentials als SharePoint-Online-Credentials zu nutzen.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<h2><strong>Examples</strong></h2>
+<h3>Beispiel 1 - SharePoint OnPremise</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; #Get the Credential-Object first:
+$creds = Get-Credential 
+#Get the Website-Object
+$web = Get-SPECsomWeb -Url &quot;http://some.sharepoint.site&quot; -Credentials $creds </pre>
+<h3>Beispiel 2 - SharePoint Online</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; #Get the Credential-Object first:
+$creds = Get-Credential 
+#Get the Website-Object
+$web = Get-SPECsomWeb -Url &quot;http://some.sharepoint.site&quot; -Credentials $creds -SPO</pre>
+<h2><strong>Related links</strong></h2>
+<h2><strong>Related links</strong></h2>

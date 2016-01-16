@@ -1,0 +1,243 @@
+<h1 style="text-align: center;"><strong>Get-SPECsomProperties</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Facilitates the loading of specific properties of a Microsoft.SharePoint.Client.ClientObject object or Microsoft.SharePoint.Client.ClientObjectCollection object. </p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">Get-SPECsomProperties [-object] &lt;ClientObject&gt; [-propertyNames] &lt;String[]&gt; [[-executeQuery] &lt;SwitchParameter&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+<pre style="margin-left: 40px;">Get-SPECsomProperties [-object] &lt;ClientObject&gt; [-propertyNames] &lt;String[]&gt; [[-executeQuery] &lt;SwitchParameter&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+Get-SPECsomProperties [-parentObject] &lt;ClientObject&gt; [-collectionObject] &lt;ClientObjectCollection&gt; [-propertyNames] &lt;String[]&gt; [-parentPropertyName] &lt;String&gt; [[-executeQuery] &lt;SwitchParameter&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+Get-SPECsomProperties [-parentObject] &lt;ClientObject&gt; [-collectionObject] &lt;ClientObjectCollection&gt; [-propertyNames] &lt;String[]&gt; [-parentPropertyName] &lt;String&gt; [[-executeQuery] &lt;SwitchParameter&gt;] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Replicates what you would do with a lambda expression in C#.<br />
+For example, <br />
+&quot;ctx.Load(list, l =&gt; list.Title, l =&gt; list.Id)&quot; <br />
+becomes <br />
+&quot;Get-SPECSOMProperties -object $list -propertyNames @(&;39;Title&;39;, &;39;Id&;39;)&quot;.</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-object</strong> <em style="font-weight: 100;">&lt;ClientObject&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">The Microsoft.SharePoint.Client.ClientObject to populate.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>true (ByValue)</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-propertyNames</strong> <em style="font-weight: 100;">&lt;String[]&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">The object properties to populate</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-executeQuery</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">If specified, execute the ClientContext.ExecuteQuery() method.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-parentObject</strong> <em style="font-weight: 100;">&lt;ClientObject&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">The Microsoft.SharePoint.Client.ClientObject that contains the collection object.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>true (ByValue)</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-collectionObject</strong> <em style="font-weight: 100;">&lt;ClientObjectCollection&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">The Microsoft.SharePoint.Client.ClientObjectCollection to populate.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>true (ByValue)</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-parentPropertyName</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">The parent object&;39;s property name corresponding to the collection object to retrieve (this is required to build the correct lamda expression). </p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<h2><strong>Examples</strong></h2>
+<h3>Beispiel 1 - Allgemeine Benutzung</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; Get-SPECSOMProperties -object $web -propertyNames @(&quot;Title&quot;, &quot;Url&quot;, &quot;AllProperties&quot;) -executeQuery 
+$web | select Title, Url, AllProperties 
+</pre>
+<h2><strong>Related links</strong></h2>
+<p style="margin-left: 40px;">
+	Quelle - itunity.com	<a href="http://www.itunity.com/article/loading-specific-values-lambda-expressions-sharepoint-csom-api-windows-powershell-1249#sthash.ldt2moo1.dpuf">http://www.itunity.com/article/loading-specific-values-lambda-expressions-sharepoint-csom-api-windows-powershell-1249#sthash.ldt2moo1.dpuf</a><br />
+</p>
