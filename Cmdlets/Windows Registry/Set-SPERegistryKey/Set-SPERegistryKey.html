@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head></head>
+<body>
+<h1 style="text-align: center;"><strong>Set-SPERegistryKey</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Erstellt einen Registry-Key mit dem angegebenen Namen unter dem angegebenen Pfad</p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">Set-SPERegistryKey [[-path] &lt;String&gt;] [[-key] &lt;String&gt;] [[-value] &lt;String&gt;] [-Reboot] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Erstellt einen Registry-Key mit dem angegebenen Namen unter dem angegebenen Pfad mit dem angegebenen Wert</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-path</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Vollständiger Registry-Pfad zum zu erstellenden Registry-Key</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-key</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Bezeichner des zu erstellenden Registry-Keys</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-value</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Wert des zu erstellenden Registry-Keys</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-Reboot</strong> <em style="font-weight: 100;">&lt;SwitchParameter&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Wenn gesetzt, führt das Cmdlet nach Schreiben des Registry-Keys einen Reboot des Computers aus.</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<p style="margin-left: 40px;">Die Cmdlets Test-SPERegistryKey, Remove-SPERegistryKey, Set-SPERegistryKey, Get-SPERegistryKey, Restart-AndRun, Clear-SPERegistryAutostart sowie Set-SPERegistryScriptStatus und Get-SPERegistryScriptStatus werden von den SPE-Standard-Scripts genutzt, um Autostart-Schlüssel in die Windows Registry einzutragen, auszulesen, zu bearbeiten oder zu entfernen.</p>
+<h2><strong>Examples</strong></h2>
+<h3>Beispiel 1 - Allgemeine Benutzung</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; $powershell = (Join-Path $env:windir &quot;system32\WindowsPowerShell\v1.0\powershell.exe&quot;)
+SetRegistry-Key -path &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; -key &quot;Restart-AndResume&quot; -value &quot;$powershell c:\ps1\autostart.ps1&quot;</pre>
+<p style="margin-left: 40px;">Erstellt in der Windows Registry unter dem Pfad &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; einen Schlüssel &quot;Restart-AndResume&quot; mit dem Wert &quot;C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe C:\ps1\autostart.ps1&quot;. Das führt dazu, dass das Script &quot;C:\ps1\autostart.ps1&quot; per Autostart beim nächsten Reboot ausgeführt wird.</p>
+<h2><strong>Related links</strong></h2>
+</body>
+</html>

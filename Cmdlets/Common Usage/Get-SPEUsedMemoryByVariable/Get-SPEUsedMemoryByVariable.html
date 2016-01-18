@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head></head>
+<body>
+<h1 style="text-align: center;"><strong>Get-SPEUsedMemoryByVariable</strong></h1>
+<h2><strong>Synopsis</strong></h2>
+<p style="margin-left: 40px;">Erzeugt eine Variable mit dem angegebenen Namen und Befehl und legt diese im Speicher zu weiteren Benutzung ab. Gleichzeitig wird der Speicherverbrauch der Variable Byte-Wert ausgegeben.</p>
+<h2><strong>Syntax</strong></h2>
+<pre style="margin-left: 40px;">Get-SPEUsedMemoryByVariable [-VariableName] &lt;String&gt; [-CommandString] &lt;String&gt; [[-Size] &lt;String&gt; {Byte | Kilobyte | Megabyte | Gigabyte} ] [-InformationAction &lt;ActionPreference&gt;] [-InformationVariable &lt;String&gt;] [&lt;CommonParameters&gt;]
+</pre>
+<h2><strong>Description</strong></h2>
+<p style="margin-left: 40px;">Erzeugt eine Variable mit dem angegebenen Namen und Befehl und legt diese im Speicher zu weiteren Benutzung ab. Gleichzeitig wird der Speicherverbrauch der Variable Byte-Wert ausgegeben.<br />
+Das ist z.B. im SharePoint-Umfeld interessant, da grad SPObject-Variablen schnell enorme Speicherbereiche belegen können.</p>
+<h2><strong>Parameters</strong></h2>
+<h3><strong>-VariableName</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Name der zu erzeugenden Variable</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-CommandString</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Auszuführender Befehl zur Erzeugung der Variable als String</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-Size</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<p style="margin-left: 40px; text-align: left;">Ausgabe-Format der Speicherbelegungsgröße als Auswahl-Parameter. Mögliche Werte sind<br />
+Byte<br />
+Kilobyte<br />
+Megabyte<br />
+Gigabyte</p>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>Kilobyte</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationAction</strong> <em style="font-weight: 100;">&lt;ActionPreference&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3><strong>-InformationVariable</strong> <em style="font-weight: 100;">&lt;String&gt;</em></h3>
+<table border="1" style="margin-left: 40px;">
+	<tbody>
+		<tr>
+			<td>Required?</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td>Position?</td>
+			<td>named</td>
+		</tr>
+		<tr>
+			<td>Default value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Accept pipeline input?</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>Accept wildcard characters?</td>
+			<td>False</td>
+		</tr>
+	</tbody>
+</table>
+<h3>&lt;CommonParameters&gt;</h3>
+<p style="margin-left: 40px;">This cmdlet supports the common parameters: Verbose, Debug,<br />
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,<br />
+OutBuffer, PipelineVariable, and OutVariable. For more information, see<br />
+about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2><strong>Inputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Outputs</strong></h2>
+<p style="margin-left: 40px;"></p>
+<p style="margin-left: 80px;"></p>
+<h2><strong>Notes</strong></h2>
+<p style="margin-left: 40px;">Die ermittelten Werte können in stark ausgelasteten Systemen allerdings ungenau sein, da die Ermittlung des Speicherverbauchs durch eine einfach Differenz-Berechnung des vor und nach der Erzeugung der Variable belegten Arbeitsspeichers erfolgt.</p>
+<h2><strong>Examples</strong></h2>
+<h3>Beispiel 1 - Get-Location</h3>
+<pre style="margin-left: 40px;">PS C:\&gt; Get-SPEUsedMemoryByVariable -VariableName testVar -CommandString &quot;get-location&quot;
+$testvar</pre>
+<pre style="margin-left: 40px;">7,1171875
+Path
+----
+C:\</pre>
+<h2><strong>Related links</strong></h2>
+</body>
+</html>
