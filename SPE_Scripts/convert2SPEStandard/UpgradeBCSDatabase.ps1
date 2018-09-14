@@ -1,0 +1,1 @@
+﻿(Get-SPDatabase | ?{$_.type -eq "Microsoft.SharePoint.BusinessData.SharedService.BdcServiceDatabase"}).Provision()

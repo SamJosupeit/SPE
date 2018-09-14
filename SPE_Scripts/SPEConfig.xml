@@ -1,0 +1,3596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SPE_Config Beschreibung="Diese XML-Datei enthält die Konfigurationseinstellungen für SPE-Standard-Scripts.">
+  <Scheduler-InstallEnvironment>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <PathXmlSetupData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_SetupData.xml"</Wert>
+      </PathXmlSetupData>
+      <PathXmlTestData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_TestData.xml"</Wert>
+      </PathXmlTestData>
+      <UrlRootWeb>
+        <Beschreibung>Url zur RootWebsite der Scheduler SiteCollection</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlRootWeb>
+      <LogToSPList>
+        <Beschreibung>Auf true setzen, damit in die definierte SharePoint-Liste geloggt werden kann.</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <UrlToLogWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <ListFunctionalNames>
+        <Beschreibung>
+        </Beschreibung>
+        <Wert>@{
+"Scheduler_Stages" = "Stage";
+"Scheduler_Modules" = "Module";
+"Scheduler_Trainings" = "Training";
+"Scheduler_Dates" = "Date";
+		}</Wert>
+      </ListFunctionalNames>
+      <listNamesToPublish>
+        <Beschreibung>
+        </Beschreibung>
+        <Wert>@(
+"Scheduler_Stages",
+"Scheduler_Modules",
+"Scheduler_Trainings",
+"Scheduler_Dates"
+)</Wert>
+      </listNamesToPublish>
+      <SPEStoredCred>
+        <Beschreibung>StoredCredentials</Beschreibung>
+        <Wert>'&lt;Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"&gt;&lt;Obj RefId="0"&gt;&lt;TN RefId="0"&gt;&lt;T&gt;System.Management.Automation.PSCredential&lt;/T&gt;&lt;T&gt;System.Object&lt;/T&gt;&lt;/TN&gt;&lt;ToString&gt;System.Management.Automation.PSCredential&lt;/ToString&gt;&lt;Props&gt;&lt;S N="UserName"&gt;samdev\sp_admin&lt;/S&gt;&lt;SS N="Password"&gt;01000000d08c9ddf0115d1118c7a00c04fc297eb010000002f07aef7cfe0914a9562be55528bfe3c0000000002000000000003660000c000000010000000a047c6398d5fc798eb0c96d50f15a22d0000000004800000a000000010000000e839d4ee24be2e6d6bc094e2ab8522cf1800000035228a3477925fbf8399ff7839734f9469b3decbbe1499c6140000008e39c4bfef2a9bd4783de74c2c713a657e072fd4&lt;/SS&gt;&lt;/Props&gt;&lt;/Obj&gt;&lt;/Objs&gt;'</Wert>
+      </SPEStoredCred>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <MinLogLevel>
+        <Beschreibung>Gibt das schwächste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"VerboseEx"</Wert>
+      </MinLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000006-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Install-SchedulerEnvironment"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer Leverkusen"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script installiert Websites, Listen, Scripts und andere Artefakte für den Trainings-Scheduler"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Scheduler-InstallEnvironment>
+  <Scheduler-WorkflowsHourly>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <PathXmlSetupData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_SetupData.xml"</Wert>
+      </PathXmlSetupData>
+      <UrlRootWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlRootWeb>
+      <LogToSPList>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <UrlToLogWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <MinLogLevel>
+        <Beschreibung>Gibt das schwächste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"VerboseEx"</Wert>
+      </MinLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000008-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Scheduler-WorkflowsHourly"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"In diesem Script werden Functions für die Scheduler-Workflows bereitgestellt, die stündlich ausgeführt werden sollen."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Scheduler-WorkflowsHourly>
+  <Scheduler-WorkflowsDaily>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <PathXmlSetupData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_SetupData.xml"</Wert>
+      </PathXmlSetupData>
+      <UrlRootWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlRootWeb>
+      <LogToSPList>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <UrlToLogWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <MinLogLevel>
+        <Beschreibung>Gibt das schwächste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"VerboseEx"</Wert>
+      </MinLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000009-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Scheduler-WorkflowsDaily"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"In diesem Script werden Functions für die Scheduler-Workflows bereitgestellt, die täglich ausgeführt werden sollen."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Scheduler-WorkflowsDaily>
+  <Scheduler-ImportTestData>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <PathXmlSetupData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_SetupData.xml"</Wert>
+      </PathXmlSetupData>
+      <PathXmlTestData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_TestData.xml"</Wert>
+      </PathXmlTestData>
+      <UrlRootWeb>
+        <Beschreibung>Url zur RootWebsite der Scheduler SiteCollection</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlRootWeb>
+      <LogToSPList>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <UrlToLogWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <ListFunctionalNames>
+        <Beschreibung>
+        </Beschreibung>
+        <Wert>@{
+"Scheduler_Stages" = "Stage";
+"Scheduler_Modules" = "Module";
+"Scheduler_Trainings" = "Training";
+"Scheduler_Dates" = "Date";
+		}</Wert>
+      </ListFunctionalNames>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <MinLogLevel>
+        <Beschreibung>Gibt das schwächste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"VerboseEx"</Wert>
+      </MinLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>
+        </Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>
+        </Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"0000000b-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Scheduler-ImportTestData"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer Leverkusen"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script importiert Testdaten in den Scheduler"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Scheduler-ImportTestData>
+  <Scheduler-PublishObjects>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <PathXmlSetupData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_SetupData.xml"</Wert>
+      </PathXmlSetupData>
+      <PathXmlTestData>
+        <Beschreibung>Pfad zur XML-Datei, die die Setup-Daten enthält</Beschreibung>
+        <Wert>$global:dirXml + "Scheduler_TestData.xml"</Wert>
+      </PathXmlTestData>
+      <UrlRootWeb>
+        <Beschreibung>Url zur RootWebsite der Scheduler SiteCollection</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlRootWeb>
+      <LogToSPList>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <UrlToLogWeb>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030868"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <listNamesToPublish>
+        <Beschreibung>
+        </Beschreibung>
+        <Wert>@(
+"Scheduler_Stages",
+"Scheduler_Modules",
+"Scheduler_Trainings",
+"Scheduler_Dates"
+)</Wert>
+      </listNamesToPublish>
+      <ListFunctionalNames>
+        <Beschreibung>
+        </Beschreibung>
+        <Wert>@{
+"Scheduler_Stages" = "Stage";
+"Scheduler_Modules" = "Module";
+"Scheduler_Trainings" = "Training";
+"Scheduler_Dates" = "Date";
+		}</Wert>
+      </ListFunctionalNames>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <MinLogLevel>
+        <Beschreibung>Gibt das schwächste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"VerboseEx"</Wert>
+      </MinLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>$UrlRootWeb</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"Scheduler_Log"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"0000000c-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Scheduler-PublishObjects"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer Leverkusen"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script veröffentlicht freigegebene Scheduler-Objekte wie Stages, Modules, Trainins und Dates"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Scheduler-PublishObjects>
+  <Copy-SPEListItemsWithCreatedDate>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+      <webUrl>
+        <Beschreibung>URL zur WebSite</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030423/ITSpecialist"</Wert>
+      </webUrl>
+      <srcListName>
+        <Beschreibung>Name der Quell-Liste</Beschreibung>
+        <Wert>"Announcements"</Wert>
+      </srcListName>
+      <trgListName>
+        <Beschreibung>Name der Ziel-Liste</Beschreibung>
+        <Wert>"ITProNewsTestList"</Wert>
+      </trgListName>
+      <fields>
+        <Beschreibung>Liste der zu übertragenden Felder, außer 'Area', wird separat im Code behandelt.</Beschreibung>
+        <Wert>@(
+        $(New-Object System.Web.UI.Pair("Title","Title")),
+        $(New-Object System.Web.UI.Pair("Body","Body")),
+        $(New-Object System.Web.UI.Pair("Created","Created")),
+        $(New-Object System.Web.UI.Pair("Expires","Expires")),
+        $(New-Object System.Web.UI.Pair("Body","TeaserText")),
+        $(New-Object System.Web.UI.Pair("Author","Author")),
+        $(New-Object System.Web.UI.Pair("Editor","Editor")),
+        $(New-Object System.Web.UI.Pair("Modified","Modified"))
+)
+        </Wert>
+      </fields>
+      <latestItemId>
+        <Beschreibung>ID des ältesten Eintrags</Beschreibung>
+        <Wert>1</Wert>
+      </latestItemId>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "Modules\SPE.SharePoint\SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>"https://no.logweb.configured"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"LogList"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000005-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Copy-SPEListItemsWithCreatedDate"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$false</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer Leverkusen - IT Communications"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script kopiert Items aus einer Custom SharePoint List in eine andere. Hierbei wird vor allem das Datum des Created-Felds berücksichtigt."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"DarkMagenta"</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Copy-SPEListItemsWithCreatedDate>
+  <New-ITOnlineDocumentFolder>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <folderRoot>
+        <Beschreibung>RootFolder für lokale Arbeitsordner für ITonline-Dokumente</Beschreibung>
+        <Wert>"C:\Files\Dokumente\Kunden\Bayer\ITonline\Manuals und HowTos\"</Wert>
+      </folderRoot>
+      <folderTemplate>
+        <Beschreibung>Vorlagen-Ordner für ITOnline-Dokumente</Beschreibung>
+        <Wert>$folderRoot + "0000_Template\"</Wert>
+      </folderTemplate>
+      <PwpLanguages>
+        <Beschreibung>Array der verfügbaren Sprachen</Beschreibung>
+        <Wert>@("de","en","es","fr","it","jp","pt","ru","zh")</Wert>
+      </PwpLanguages>
+      <documentFormats>
+        <Beschreibung>Hashtable der verfügbaren Formate und Sprachen mit Pfaden zu den jeweiligen Template-Dateien</Beschreibung>
+        <Wert>@{"Manual" = @{"de" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Manual%20DE.dotx"; "en" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Manual%20EN.dotx"};"How-To" = @{"de" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20How-To%20DE.dotx"; "en" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20How-To%20EN.dotx"};"Policy" = @{"de" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Policy%20DE.dotx"; "en" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Policy%20EN.dotx"};"Quick Start" = @{"de" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Quick%20Start%20DE.dotx"; "en" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Quick%20Start%20EN.dotx"};"Tip" = @{"de" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Tip%20DE.dotx"; "en" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Tip%20EN.dotx"};"Tip Card" = @{"de" = "http://portal13.samdev.local/sites/030423/team/Templates/Template%20Tippkarte%20DE.potx"}}</Wert>
+      </documentFormats>
+      <ExtensionsToApplications>
+        <Beschreibung>Text</Beschreibung>
+        <Wert>@{"dotx" = "Word";"potx" = "Powerpoint"}</Wert>
+      </ExtensionsToApplications>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000002-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_New-ITOnlineDocumentFolder"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script erstellt einen neuen Ordner für ein ITOnline Dokument(Manual oder How-To) mit allen Image-Foldern und Dokumenten-Vorlagen"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </New-ITOnlineDocumentFolder>
+  <Open-SPFolderInWindowsExplorer Anmerkung="Block ist vom Cmdlet Open-SPFolderInWindowsExplorer. Nicht Löschen!!!">
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+      <PredefinedFolderURLs>
+        <Beschreibung>Liste von vordefinierten Ordner-URLs</Beschreibung>
+        <Wert>@{
+"ITPro - SiteAssets" = "\\portal13.samdev.local\DavWWWRoot\sites\030423\SiteAssets";
+"ITPro Satellite - SiteAssets" = "\\bayergroup.sharepoint.com@SSL\DavWWWRoot\sites\000039\SiteAssets";
+"ITonline Prozesse - SiteAssets" = "\\portal13.samdev.local\DavWWWRoot\sites\030815\SiteAssets";
+"ITPro Satellite - Root" = "\\bayergroup.sharepoint.com@SSL\DavWWWRoot\sites\000039";
+"ITonline Prozesse - Root" = "\\portal13.samdev.local\DavWWRoot\sites\030815";
+"R&amp;D Applications - Calendar" = "\\portal13.samdev.local\DavWWRoot\sites\030719\rd\Lists\RD%20Calendar";
+"Ablage Screenshots Working Documents ITonline" = "\\portal13.samdev.local\DavWWWRoot\sites\000054\tpm\screens\Pictures\Collaboration\1143 CCD V3";
+"DiLC - Site Assets" = "\\portal13.samdev.local\DavWWWRoot\sites\040008\SiteAssets\";
+"Project Scheduler - Freigegebene Dokumente" = "\\bayergroup.sharepoint.com@SSL\DavWWWRoot\sites\000108\projects\scheduler\Freigegebene%20Dokumente";
+"Project Scheduler - Site Assets" = "\\bayergroup.sharepoint.com@SSL\DavWWWRoot\sites\000108\SiteAssets\Forms\";
+"ITonline - Working Documents" = "\\portal13.samdev.local\DavWWWRoot\sites\030423\team\Working%20Documents";
+"ITonline - User Guide PDFs" = "\\portal13.samdev.local\DavWWWRoot\sites\030423\team\User%20Guide%20PDFs";
+"gkrieger@OnedriveForBusiness" = "\\alegri-my.sharepoint.com@SSL\DavWWWRoot\personal\gkrieger_alegri_eu\Documents";
+"Scheduler Prod Scripts" = "\\portal13.samdev.local\DavWWWRoot\sites\030868\Scripts\Forms\";
+"Scheduler-DE-Subscriptions" = "\\portal13.samdev.local\DavWWWRoot\sites\030868\de-de\Lists\Scheduler_Subscriptions"
+}</Wert>
+      </PredefinedFolderURLs>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000003-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Open-SPFolderInWindowsExplorer"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"78"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script erfragt eine SharePoint-URL und öffnet den dazugehörigen Ordner im Windows Explorer"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Open-SPFolderInWindowsExplorer>
+  <Export-O365Taxonomy>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <Url>
+        <Beschreibung>Url zur O365-SiteCollection, deren Taxaonomy-Speicher exportiert werden soll.</Beschreibung>
+        <Wert>"https://tge.sharepoint.com/sites/wiki"</Wert>
+      </Url>
+      <AdminAccountName>
+        <Beschreibung>Anmeldename des AdminAccounts</Beschreibung>
+        <Wert>"ctsupport@tge-gas.com"</Wert>
+      </AdminAccountName>
+      <ExportFileName>
+        <Beschreibung>Dateiname der Export-Datei, ohne Endung</Beschreibung>
+        <Wert>"TGE-ExportedTaxonomy"</Wert>
+      </ExportFileName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000004-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Export-O365Taxonomy"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"contentteam AG - Kunde: TGE"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script exportiert den vollständigen Taxonomy-Speicher einer O365-SiteCollection"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Export-O365Taxonomy>
+  <Import-O365Taxonomy>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <Url>
+        <Beschreibung>Url zur O365-SiteCollection, in deren Taxonomy-Speicher Daten importiert werden soll.</Beschreibung>
+        <Wert>"https://msp848300.sharepoint.com/sites/tgewiki"</Wert>
+      </Url>
+      <AdminAccountName>
+        <Beschreibung>Anmeldename des AdminAccounts</Beschreibung>
+        <Wert>"Admin@MSP848300.onmicrosoft.com"</Wert>
+      </AdminAccountName>
+      <ImportFileName>
+        <Beschreibung>Dateiname der Export-Datei, ohne Endung</Beschreibung>
+        <Wert>"TGE-ExportedTaxonomy"</Wert>
+      </ImportFileName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000005-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Export-O365Taxonomy"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"contentteam AG - Kunde: TGE"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script exportiert den vollständigen Taxonomy-Speicher einer O365-SiteCollection"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Import-O365Taxonomy>
+  <Start-SAMDEV>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert. Der jeweilige Node-Tag entspricht dabei dem Variablen-Namen">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable. Das Resultat entspricht $VariableName = "DemoWert"</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+      <mRemoteNG>
+        <Beschreibung>Hier den Pfad zur EXE von mRemoteNG eintragen</Beschreibung>
+        <Wert>"C:\Files\Dropbox\Privat\Software\mRemoteNG-1.74\mRemoteNG.exe"</Wert>
+      </mRemoteNG>
+      <mRemoteNGConfig>
+        <Beschreibung>Hier den Pfad zur confCons.xml von mRemoteNG eintragen</Beschreibung>
+        <Wert>"C:\Files\Dropbox\Privat\Software\mRemoteNG-1.74\confCons.xml"</Wert>
+      </mRemoteNGConfig>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zum Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$true</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000002-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>Registry-Pfad zum Autostart-Ordner</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Autorun_Start-SAMDEV"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Meine Firma - Mein Kunde - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script startet die Virtuellen Maschinen für den lokalen Hyper-V Host."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Start-SAMDEV>
+  <Save-SAMDEV>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert. Der jeweilige Node-Tag entspricht dabei dem Variablen-Namen">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable. Das Resultat entspricht $VariableName = "DemoWert"</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zum Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$true</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000003-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>Registry-Pfad zum Autostart-Ordner</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Autorun_Start-SAMDEV"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Meine Firma - Mein Kunde - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script speichert die Virtuellen Maschinen für den lokalen Hyper-V Host."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Save-SAMDEV>
+  <Stop-SAMDEV>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert. Der jeweilige Node-Tag entspricht dabei dem Variablen-Namen">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable. Das Resultat entspricht $VariableName = "DemoWert"</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zum Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$true</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000004-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>Registry-Pfad zum Autostart-Ordner</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Autorun_Start-SAMDEV"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Meine Firma - Mein Kunde - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script fährt die Virtuellen Maschinen für den lokalen Hyper-V Host herunter."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Stop-SAMDEV>
+  <Import-CsomTaxonomy>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <Url>
+        <Beschreibung>Url zur O365-SiteCollection, in deren Taxonomy-Speicher Daten importiert werden soll.</Beschreibung>
+        <Wert>"http://portal13.samdev.local"</Wert>
+      </Url>
+      <AdminAccountName>
+        <Beschreibung>Anmeldename des AdminAccounts</Beschreibung>
+        <Wert>"samdev\sp_admin"</Wert>
+      </AdminAccountName>
+      <ImportFileName>
+        <Beschreibung>Dateiname der Export-Datei, ohne Endung</Beschreibung>
+        <Wert>"TGE-ExportedTaxonomy"</Wert>
+      </ImportFileName>
+      <ManagedMetadataServiceName>
+        <Beschreibung>Name des zu adressierenden Managed Metadata Service</Beschreibung>
+        <Wert>"MMS"</Wert>
+      </ManagedMetadataServiceName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zu Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000005-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Export-O365Taxonomy"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"contentteam AG - Kunde: TGE"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script exportiert den vollständigen Taxonomy-Speicher einer O365-SiteCollection"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Import-CsomTaxonomy>
+  <Clean-HelpHTMLFiles>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <rootFolderPath>
+        <Beschreibung>Absoluter Pfad zum Root-Verzeichnis, in dem die HTML-Help-Dateien zum SPE-Module liegen</Beschreibung>
+        <Wert>"H:/Code/PS/_ScriptGenerator/Modules/SamsPowerShellEnhancements/de-DE/HTML"</Wert>
+      </rootFolderPath>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000003-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Clean-HelpHTMLFiles"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$false</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"MT AG Ratingen - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script bereinigt die vom PowerShell Help Editor erzeugten HTML-Dateien, die statt deutscher Umlaute HTML-ASCII-Codes verwenden."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Clean-HelpHTMLFiles>
+  <Limit-VersionsOnSPLibrary>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <UrlWebSite>
+        <Beschreibung>URL zur Website</Beschreibung>
+        <Wert>"http://portal13.samdev.local/sites/030423/team/"</Wert>
+      </UrlWebSite>
+      <ListName>
+        <Beschreibung>Name der zu bereinigenden Liste</Beschreibung>
+        <Wert>"Working Documents"</Wert>
+      </ListName>
+      <MaxVersions>
+        <Beschreibung>Maximale Anzahl an Versionen</Beschreibung>
+        <Wert>2</Wert>
+      </MaxVersions>
+      <SPEStoredCred>
+        <Beschreibung>StoredCredentials</Beschreibung>
+        <Wert>'&lt;Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"&gt;&lt;Obj RefId="0"&gt;&lt;TN RefId="0"&gt;&lt;T&gt;System.Management.Automation.PSCredential&lt;/T&gt;&lt;T&gt;System.Object&lt;/T&gt;&lt;/TN&gt;&lt;ToString&gt;System.Management.Automation.PSCredential&lt;/ToString&gt;&lt;Props&gt;&lt;S N="UserName"&gt;AD-BAYER-CNB\emekj&lt;/S&gt;&lt;SS N="Password"&gt;01000000d08c9ddf0115d1118c7a00c04fc297eb01000000df88dcf1e2da574c974c5a7299d597690000000002000000000003660000c000000010000000a14f13dc3bfe3a1e1b6fe104b497eb690000000004800000a0000000100000001a0072107650401158a34cf801f0a2b71800000049880b4c37a27cfc947d2a208db96cdbbdeeac6b96aab3a914000000d55e935a872ea6a6a0679b435972e777db9a9b55&lt;/SS&gt;&lt;/Props&gt;&lt;/Obj&gt;&lt;/Objs&gt;'</Wert>
+      </SPEStoredCred>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>"https://no.logweb.configured"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"LogList"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"0000000e-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Limit-VersionsOnSPLibrary"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer Leverkusen"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script setzt das Maximum für Versionen einer SharePoint-Library und bereinigt danach alle überschüssigen Versionen"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Limit-VersionsOnSPLibrary>
+  <Open-SPECurrentWork Anmerkung="Block ist vom Cmdlet Open-SPECurrentWork. Nicht Löschen!!!">
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <ps1FilesToOpen>
+        <Beschreibung>Hier die Script-Dateien auflisten, die mit ISE geöffnet werden sollen.</Beschreibung>
+        <Wert>@(
+"$path\Modules\SPE.Common\SPE.Common.psm1",
+"$path\Modules\SPE.SharePoint\SPE.SharePoint.psm1",
+"$path\Modules\Scheduler.Common\Scheduler.Common.psm1",
+"$path\Modules\SPE.DEV\SP.CSOM.psm1",
+"$path\Scheduler-InstallEnvironment.ps1",
+"$path\Scheduler-WorkflowsHourly.ps1",
+"$path\Scheduler-WorkflowsDaily.ps1",
+"$path\Scheduler-ImportTestData.ps1",
+"$path\Scheduler-PublishObjects.ps1"
+		)</Wert>
+      </ps1FilesToOpen>
+      <xmlFilesToOpen>
+        <Beschreibung>Hier die XML-Dateien auflisten, die mit Notepad++ geöffnet werden sollen.</Beschreibung>
+        <Wert>@(
+"$path\SPEConfig.xml",
+"$path\xml\Scheduler_SetupData.xml",
+"$path\xml\Scheduler_TestData.xml",
+"$path\xml\SPE_XML_NodeTemplates.xml",
+"\\portal13.samdev.local\DavWWWRoot\sites\030868\Scripts\SchedulerLoadCustomCSS.html",
+"\\portal13.samdev.local\DavWWWRoot\sites\030868\Scripts\SchedulerCustomCSS.js",
+"\\portal13.samdev.local\DavWWWRoot\sites\030868\_catalogs\masterpage\BlankWebPartPageScheduler.aspx"
+		)</Wert>
+      </xmlFilesToOpen>
+      <urlsToOpen>
+        <Beschreibung>Hier die URLs auflisten, die mit IE geöffnet werden sollen.</Beschreibung>
+        <Wert>@(
+"http://portal13.samdev.local/sites/030868/_layouts/15/viewlsts.aspx",
+"http://portal13.samdev.local/sites/030868/_layouts/15/AdminRecycleBin.aspx?View=2",
+"http://portal13.samdev.local/sites/030868/de-de/_layouts/15/viewlsts.aspx",
+"http://portal13.samdev.local/sites/030868/de-de/_layouts/15/AdminRecycleBin.aspx?View=2",
+"http://portal13.samdev.local/sites/030868/en-us/_layouts/15/viewlsts.aspx",
+"http://portal13.samdev.local/sites/030868/en-us/_layouts/15/AdminRecycleBin.aspx?View=2",
+"http://portal13.samdev.local/sites/030868/de-de/Seiten/Meine-Buchungen.aspx"
+)</Wert>
+      </urlsToOpen>
+      <paths>
+        <Beschreibung>Hier die URLs auflisten, die mit IE geöffnet werden sollen.</Beschreibung>
+        <Wert>@{
+"ISE" = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe";
+"notepadPlusPlus" = "C:\Files\Code\npp.7.bin\notepad++.exe";
+"ULSViewer" = "C:\Files\ulsviewer\UlsViewerPatched.exe";
+"ULSViewerParams" = "-realtime:C:\SPE_Scripts\Logs"
+}</Wert>
+      </paths>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$false</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$false</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$false</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>""</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>""</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"0000000a-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Open-SPECurrentWork"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$false</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Öffnet die aktuellen Scripte, Websites, ULSViewer und XML-Dateien"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Open-SPECurrentWork>
+  <Scheduler-Setup>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>
+        </Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>
+        </Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"0000000d-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Scheduler-Setup"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: Bayer Leverkusen"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dies ist das Main-Setup-Script, mit dem der Scheduler installiert wird."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Scheduler-Setup>
+  <Default>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>"https://no.logweb.configured"</Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>"LogList"</Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$true</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"00000001-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH"</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Beschreibender Text zum Script"</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Default>
+  <Get-BayerMyCloudGridCardValue>
+    <ScriptVariablen Beschreibung="Hier werden Script-spezifische Variablen deklariert.">
+      <VariableName>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>"DemoWert"</Wert>
+      </VariableName>
+      <pathCsvGridCard>
+        <Beschreibung>Das ist eine Beispiel-Variable</Beschreibung>
+        <Wert>$dirCsv+"MyCloudGridCard243060.csv"</Wert>
+      </pathCsvGridCard>
+    </ScriptVariablen>
+    <Pfade Beschreibung="Hier werden Pfade zur Dateien oder Ordnern hinterlegt">
+      <PathToSharePointDLLs>
+        <Beschreibung>Berechneter Pfad zu den SharePoint-DLLs</Beschreibung>
+        <Wert>$StringWorkingDir + "SharePointDLLs\"</Wert>
+      </PathToSharePointDLLs>
+      <dirLog>
+        <Beschreibung>Pfad zu dem Log-Verzeichnis</Beschreibung>
+        <Wert>"C:\SPE_Scripts\Logs\"</Wert>
+      </dirLog>
+    </Pfade>
+    <Logging Beschreibung="Hier wird das Logging-Verhalten der SPE-Scripts definiert.">
+      <MaxLogLevel>
+        <Beschreibung>Gibt das schärfste LogLevel an in der Reihenfolge: VerboseEx,Verbose,Medium,High,Critical,Unexpected</Beschreibung>
+        <Wert>"Unexpected"</Wert>
+      </MaxLogLevel>
+      <LogToSPList>
+        <Beschreibung>Aktiviert das Logging in eine SharePoint-Liste</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToSPList>
+      <LogToConsole>
+        <Beschreibung>Aktiviert das Logging auf die Console</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToConsole>
+      <LogToLogFile>
+        <Beschreibung>Aktiviert das Logging in die Logdatei</Beschreibung>
+        <Wert>$false</Wert>
+      </LogToLogFile>
+      <LogToULSFile>
+        <Beschreibung>Aktiviert das Logging in die ULS-Datei</Beschreibung>
+        <Wert>$true</Wert>
+      </LogToULSFile>
+      <ReportToFile>
+        <Beschreibung>Aktiviert das Reporting in eine einfache Text-Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToFile>
+      <ReportToULS>
+        <Beschreibung>Aktiviert das Reporting in eine ULS-konforme Datei</Beschreibung>
+        <Wert>$false</Wert>
+      </ReportToULS>
+      <ActivateTestLoggingVerbose>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Status-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingVerbose>
+      <ActivateTestLoggingException>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Exception-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLoggingException>
+      <ActivateTestLogging>
+        <Beschreibung>Wenn auf TRUE gesetzt, werden erweiterte Logging-Meldungen aus den Module-Cmdlets ins Log geschrieben.</Beschreibung>
+        <Wert>$true</Wert>
+      </ActivateTestLogging>
+      <UrlToLogWeb>
+        <Beschreibung>URL zur Website, in der die Log-Liste für LogToSPList liegt</Beschreibung>
+        <Wert>
+        </Wert>
+      </UrlToLogWeb>
+      <LogListName>
+        <Beschreibung>Name der SharePoint-Log-Liste</Beschreibung>
+        <Wert>
+        </Wert>
+      </LogListName>
+      <SPLogMaxItems>
+        <Beschreibung>Maximale Anzahl der Items in der SharePoint-Log-Liste</Beschreibung>
+        <Wert>5000</Wert>
+      </SPLogMaxItems>
+    </Logging>
+    <Scriptverhalten Beschreibung="Hier wird definiert, ob ein Script im Test-Modus und/oder mit Administrator-Berechtigungen auszuführen ist.">
+      <TestModus>
+        <Beschreibung>Aktiviert den TestModus, um z.B. Löschfunktionen im Testbetrieb vorerst zu deaktivieren</Beschreibung>
+        <Wert>$false</Wert>
+      </TestModus>
+      <UsingSharePoint>
+        <Beschreibung>legt fest, ob das SharePoint PowerShell Snappin geladen werden soll.</Beschreibung>
+        <Wert>$false</Wert>
+      </UsingSharePoint>
+      <RunAsAdmin>
+        <Beschreibung>prüft, ob das Script in einer Console mit Administrator-Berechtigungen ausgeführt wird. Falls nicht wird das Script in einer neuen Console mit Administrator-Berechtigungen neugestartet.</Beschreibung>
+        <Wert>$false</Wert>
+      </RunAsAdmin>
+      <DefaultCorrId>
+        <Beschreibung>GUID als initiale Correlation ID für ULS-Dateien</Beschreibung>
+        <Wert>[Guid]"0000000f-0000-0000-0000-000000000000"</Wert>
+      </DefaultCorrId>
+    </Scriptverhalten>
+    <Registry Beschreibung="Hier sind Parameter für die Registry-Cmdlets hinterlegt.">
+      <powershell>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>(Join-Path $env:windir "system32\WindowsPowerShell\v1.0\powershell.exe")</Wert>
+      </powershell>
+      <RegRunKey>
+        <Beschreibung>lokaler Pfad zur Powershell.exe</Beschreibung>
+        <Wert>"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"</Wert>
+      </RegRunKey>
+      <restartKey>
+        <Beschreibung>Name des für den Autostart zu setzenden Registry-Keys</Beschreibung>
+        <Wert>"SPE_Restart_Get-BayerMyCloudGridCardValue"</Wert>
+      </restartKey>
+    </Registry>
+    <ULS Beschreibung="Hier wird das ULS-Logging definiert.">
+      <UlsHeader>
+        <Beschreibung>ULS-File-Header. Abstände nicht verändern, sonst ist die ganze ULs-Datei nicht vom ULS-Viewer lesbar.</Beschreibung>
+        <Wert>"Timestamp              	Process                                 	TID   	Area                          	Category                      	EventID	Level     	Message 	Correlation"</Wert>
+      </UlsHeader>
+      <maxAgeOfULSFile>
+        <Beschreibung>Ist das Erstelldatum des aktuellen ULSFiles älter als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>New-TimeSpan -Minutes 15</Wert>
+      </maxAgeOfULSFile>
+      <maxSizeOfULSFile>
+        <Beschreibung>Ist das aktuelle ULSFile größer als hier angegeben, wird ein neues erstellt.</Beschreibung>
+        <Wert>"10MB"</Wert>
+      </maxSizeOfULSFile>
+      <maxSizeOfULSDirectory>
+        <Beschreibung>Ist der Inhalt des jeweiligen ULS-Verzeichnisses größer als hier angegeben, wird das jeweils älteste File gelöscht.</Beschreibung>
+        <Wert>"1GB"</Wert>
+      </maxSizeOfULSDirectory>
+    </ULS>
+    <Display Beschreibung="Hier wird die Display-Ausgabe für die Console definiert.">
+      <UseInfoHeader>
+        <Beschreibung>Switch zur Festlegung, ob Log-Meldungen auf Console mit oder ohne InfoHeader dargestellt werden sollen.</Beschreibung>
+        <Wert>$true</Wert>
+      </UseInfoHeader>
+      <InfoHeaderWidth>
+        <Beschreibung>Breite des InfoHeaders</Beschreibung>
+        <Wert>"54"</Wert>
+      </InfoHeaderWidth>
+      <InfoHeaderSuperScription>
+        <Beschreibung>Inhalt des oberen InfoHeader-Blocks</Beschreibung>
+        <Wert>"Alegri International Service GmbH - Kunde: "</Wert>
+      </InfoHeaderSuperScription>
+      <InfoHeaderSubScription>
+        <Beschreibung>Inhalt des unteren InfoHeader-Blocks</Beschreibung>
+        <Wert>"Dieses Script liest die Zwischenablage aus, in der sich der kopierte Key für die MyCloud-Gridcard befinden sollte. Stimmt der kopierte Wert mit dem entsprechenden Schema überein, wird das entsprechende Value zurück in die Zwischenablage kopiert und kann dann in das Formular eingetragen werden."</Wert>
+      </InfoHeaderSubScription>
+      <GivenBackGroundColor>
+        <Beschreibung>Gegebene BackgroundColor</Beschreibung>
+        <Wert>"$Host.UI.RawUI.BackgroundColor"</Wert>
+      </GivenBackGroundColor>
+      <InfoHeaderForeGroundColor>
+        <Beschreibung>Schriftfarbe des InfoHeaders</Beschreibung>
+        <Wert>"Green"</Wert>
+      </InfoHeaderForeGroundColor>
+      <InfoHeaderBackGroundColor>
+        <Beschreibung>Hintergrundfarbe des InfoHeaders</Beschreibung>
+        <Wert>"DarkCyan"</Wert>
+      </InfoHeaderBackGroundColor>
+      <DisplayForeGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>"Yellow"</Wert>
+      </DisplayForeGroundColor_Normal>
+      <DisplayForeGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"Red"</Wert>
+      </DisplayForeGroundColor_Error>
+      <DisplayBackGroundColor_Normal>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für normale Meldungen</Beschreibung>
+        <Wert>$GivenBackGroundColor</Wert>
+      </DisplayBackGroundColor_Normal>
+      <DisplayBackGroundColor_Error>
+        <Beschreibung>Schriftfarbe der Ausgabe nach dem Infoheader für Fehler- oder kritische Meldungen</Beschreibung>
+        <Wert>"White"</Wert>
+      </DisplayBackGroundColor_Error>
+      <DisplayFrameChar>
+        <Beschreibung>Char mit dem der InfoHeader text-grafisch aufgebaut wird</Beschreibung>
+        <Wert>"#"</Wert>
+      </DisplayFrameChar>
+    </Display>
+  </Get-BayerMyCloudGridCardValue>
+</SPE_Config>

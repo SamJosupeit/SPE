@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SPE_XML_NodeTemplates>
+    <SPListFields>
+        <!-- General Notes START-->
+        <!-- Use the described schemata for the creation of SPListFields via Cmdlet Add-SPECsomListField -->
+        <!-- If the InternalName shall be set, use "Name" as the "InternalName" and set "AddFieldInternalNameHint" in "AddFieldOptions" -->
+        <!-- Description of Attributes: https://msdn.microsoft.com/en-us/library/office/aa979575.aspx?tduid=(949a553607de1f285545bd0500793e9f)(256380)(2459594)(TnL5HPStwNw-HD4We8lErWSHcsL_oNjZ5A)() -->
+        <!-- General Notes END -->
+        <!-- Simple text field-->
+        <Field Type="Text" Name="" StaticName="" DisplayName="" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Note Field, plain text -->
+        <Field Type="Note" Name="" StaticName="" DisplayName="" NumLines="6" RichText="FALSE" Sortable="FALSE" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Note field, rich text -->
+        <Field Type="Note" Name="" StaticName="" DisplayName="" NumLines="6" RichText="TRUE" Sortable="FALSE" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Note field, enhanced rich text -->
+        <Field Type="Note" Name="" StaticName="" DisplayName="" NumLines="6" RichText="TRUE" RichTextMode="FullHtml" IsolateStyles="TRUE" Sortable="FALSE" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Boolean field without Default-->
+        <Field Type="Boolean" Name="" StaticName="" DisplayName="" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Boolean field with Default-->
+        <Field Type="Boolean" Name="" StaticName="" DisplayName="" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Default>0</Default>
+        </Field>
+        <!-- DateTime field with Default-->
+        <Field Type="DateTime" Name="" StaticName="" DisplayName="" Format="DateTime" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Default>[Now]</Default>
+        </Field>
+        <!-- DateTime field without Default-->
+        <Field Type="DateTime" Name="" StaticName="" DisplayName="" Format="DateTime" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Number field general-->
+        <Field Type="Number" Name="" StaticName="" DisplayName="" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Number field only positiv values-->
+        <Field Type="Number" Name="" StaticName="" DisplayName="" Min="0" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Number field restricted values -->
+        <Field Type="Number" Name="" StaticName="" DisplayName="" Min="0" Max="5000" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Number field with number of decimals -->
+        <Field Type="Number" Name="" StaticName="" DisplayName="" Decimals="0" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Number field as percentage value-->
+        <Field Type="Number" Name="" StaticName="" DisplayName="" Percentage="True" Decimals="2" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Choice Field as Dropdown -->
+        <Field Type="Choice" Name="" StaticName="" DisplayName="" Format="Dropdown" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Default>Meat menu</Default>
+            <CHOICES>
+                <CHOICE>Fish menu</CHOICE>
+                <CHOICE>Vegeterian menu</CHOICE>
+            </CHOICES>
+        </Field>
+        <!-- Choice Field as Radio buttons -->
+        <Field Type="Choice" Name="" StaticName="" DisplayName="" Format="RadioButtons" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Default>Meat menu</Default>
+            <CHOICES>
+                <CHOICE>Fish menu</CHOICE>
+                <CHOICE>Vegeterian menu</CHOICE>
+            </CHOICES>
+        </Field>
+        <!-- Choice Field with MultiChoice -->
+        <!-- Don't use the "Format" attribute here -->
+        <Field Type="MultiChoice" Name="" StaticName="" DisplayName="" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Default>Meat menu</Default>
+            <CHOICES>
+                <CHOICE>Fish menu</CHOICE>
+                <CHOICE>Vegeterian menu</CHOICE>
+            </CHOICES>
+        </Field>
+        <!-- Choice Field as Dropdown with FillInChoice -->
+        <Field Type="Choice" Name="" StaticName="" DisplayName="" Format="Dropdown" FillInChoice="True" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Default>Meat menu</Default>
+            <CHOICES>
+                <CHOICE>Fish menu</CHOICE>
+                <CHOICE>Vegeterian menu</CHOICE>
+            </CHOICES>
+        </Field>
+        <!-- URL field as Picture -->
+        <Field Type="URL" Name="" StaticName="" DisplayName="" Format="Image" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- URL field als Hyperlink -->
+        <Field Type="URL" Name="" StaticName="" DisplayName="" Format="Hyperlink" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Lookup field -->
+        <Field Type="Lookup" Name="" StaticName="" DisplayName="" List="ListTitle" ShowField="FieldInternalName" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Lookup field with RelationshipDeleteBehavior -->
+        <Field Type="Lookup" Name="" StaticName="" DisplayName="" List="ListTitle" ShowField="FieldInternalName" RelationshipDeleteBehavior="Restrict" Indexed="True" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Lookup field with MulitSelect -->
+        <Field Type="Lookup" Name="" StaticName="" DisplayName="" List="ListTitle" ShowField="FieldInternalName" Mult="True" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+		<!-- Lookup field with additional column -->
+		<Field Type="LookupMulti" Name ="" StaticName="" DisplayName="" List="ListTitle" ShowField="1stFieldInternalName" Description="">
+			<MultiLookup>
+				<Field Type="LookupMulti" Name ="TopicsDE" StaticName="TopicsDE" DisplayName="TopicsDE" List="ListTitle" ShowField="TitleDE" FieldRef="1stFieldInternalName" WebId="[Leave Empty]" ReadOnly="TRUE" Mult="TRUE" />
+			</MultiLookup>
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+		</Field>
+        <!-- User field -->
+        <Field Type="User" Name="" StaticName="" DisplayName="" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- User field with UserSelectionMode, UserSelectionScope and MultiChoice -->
+        <Field Type="User" Name="" StaticName="" DisplayName="" UserSelectionMode="PeopleOnly" UserSelectionScope="7" Mult="TRUE" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+        </Field>
+        <!-- Calculated Field -->
+        <Field Type="Calculated" Name="" StaticName="" DisplayName="" ResultType="Text" Required="TRUE" ReadOnly="TRUE" Description="">
+            <AddFieldOptions>
+                <AddFieldInternalNameHint/>
+                <AddFieldToDefaultView/>
+            </AddFieldOptions>
+            <Formula>=FieldInternalName</Formula>
+            <FieldRefs>
+                <FieldRef Name="FieldInternalName"/>
+            </FieldRefs>
+        </Field>
+    </SPListFields>
+    <SPListViews>
+        <View Name="All Items" ViewType="none" Paged="True" PersonalView="False" SetAsDefaultView="True" >
+            <Query>
+                <OrderBy>
+                    <FieldRef Name="ID"/>
+                </OrderBy>
+                <Where>
+                    <Or>
+                        <Geq>
+                            <FieldRef Name="Field1"/>
+                            <Value Type="Number">1500</Value>
+                        </Geq>
+                        <Leq>
+                            <FieldRef Name="Field2"/>
+                            <Value Type="Number">500</Value>
+                        </Leq>
+                    </Or>
+                </Where>
+            </Query>
+            <ViewFields>
+                <FieldRef Name="Title"/>
+                <FieldRef Name="Field1"/>
+                <FieldRef Name="Field2"/>
+                <FieldRef Name="Field3"/>
+                <FieldRef Name="Field4"/>
+            </ViewFields>
+            <RowLimit>100</RowLimit>
+        </View>
+    </SPListViews>
+</SPE_XML_NodeTemplates>

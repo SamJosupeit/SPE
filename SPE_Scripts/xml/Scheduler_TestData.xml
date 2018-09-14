@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scheduler Version="0.1">
+	<FileDescription>
+	</FileDescription>
+    <Websites>
+        <Website ScriptInternalName="RootWeb" relativeUrl="/">
+            <Lists>
+                <List Name="Scheduler_Languages">
+					<Items>
+						<Item LanguageEN="German" LanguageDE="Deutsch" LanguageShortcut="DE"/>
+						<Item LanguageEN="English" LanguageDE="Englisch" LanguageShortcut="EN"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Countries">
+					<Items>
+						<Item CountryEN="Germany" CountryDE="Deutschland" CountryShortcut="DE"/>
+						<Item CountryEN="United States of America" CountryDE="Vereinigte Staaten von Amerika" CountryShortcut="US"/>
+					</Items>
+               </List>
+				<List Name="Scheduler_Locations">
+					<Items>
+						<Item LocationEN="Leverkusen" LocationDE="Leverkusen" CountryShortcut="DE" PcAvailable="TRUE" NumPcAvailable="100"/>
+						<Item LocationEN="Pittsburgh" LocationDE="Pittsburgh" CountryShortcut="US" PcAvailable="TRUE" NumPcAvailable="210"/>
+					</Items>
+                </List>
+				<List Name="Scheduler_Buildings">
+					<Items>
+						<Item BuildingEN="B151" BuildingDE="B151" LocationEN="Leverkusen"/>
+						<Item BuildingEN="C151" BuildingDE="C151" LocationEN="Leverkusen"/>
+						<Item BuildingEN="A17" BuildingDE="A17" LocationEN="Pittsburgh"/>
+						<Item BuildingEN="C12" BuildingDE="C12" LocationEN="Pittsburgh"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Rooms">
+					<Items>
+						<Item RoomName="023" BuildingEN="B151" AvailableSeats="50" AvailablePCs="50"/>
+						<Item RoomName="053" BuildingEN="C151" AvailableSeats="20" AvailablePCs="7"/>
+						<Item RoomName="022" BuildingEN="B151" AvailableSeats="10" AvailablePCs="5"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Topics">
+					<Items>
+						<Item TopicsEN="Outlook" TopicsDE="Rausguck" TopicDescriptionEN="Description for Outlook" TopicDescriptionDE="Beschreibung für Rausguck"/>
+						<Item TopicsEN="Skype for Business" TopicsDE="Skype fürs Geschäft" TopicDescriptionEN="Description for Skype for Business" TopicDescriptionDE="Beschreibung für Skype fürs Geschäft"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_KickOffItems">
+					<Items>
+						<Item KickOffItemEN="Kickoffitem 1" KickOffItemDE="Kickoffitem 1" KickOffDate="17/03/2017 12:00:00" LocationEN="Leverkusen"/>
+						<Item KickOffItemEN="KickoffItem 2" KickOffItemDE="KickoffItem 2" KickOffDate="23/05/2017 13:00:00" LocationEN="Pittsburgh"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Stages">
+					<Items>
+						<Item StageEN="Stage 1" StageDE="Etappe 1" StageTopicsEN="Outlook,Skype for Business" StageDescriptionEN="Description for Stage 1" StageDescriptionDE="Beschreibung für Etappe 1" KickOffItemEN="Kickoffitem 1" LanguageShortcut="DE" Published="TRUE"/>
+						<Item StageEN="Stage 2" StageDE="Etappe 2" StageTopicsEN="Outlook" StageDescriptionEN="Description for Stage 2" StageDescriptionDE="Beschreibung für Etappe 2" KickOffItemEN="Kickoffitem 1" LanguageShortcut="EN" Published="TRUE"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Modules">
+					<Items>
+						<Item ModuleEN="Module 1" ModuleDE="Modul 1" ModuleDescriptionEN="Description for Module 1" ModuleDescriptionDE="Beschreibung für Modul 1" StageEN="Stage 1" ModuleTopicsEN="Outlook" LanguageShortcut="DE" Published="TRUE" />
+						<Item ModuleEN="Module 2" ModuleDE="Modul 2" ModuleDescriptionEN="Description for Module 2" ModuleDescriptionDE="Beschreibung für Modul 2" StageEN="Stage 1" ModuleTopicsEN="Skype for Business" LanguageShortcut="DE" Published="TRUE" />
+					</Items>
+                </List>
+                <List Name="Scheduler_Trainings">
+					<Items>
+						<Item TrainingEN="Training 1" TrainingDE="Schulung 1" TrainingDescriptionEN="Description for Training 1" TrainingDescriptionDE="Beschreibung für Schulung 1" ModuleEN="Module 1" TrainingTopicsEN="Outlook" LanguageShortcut="DE" Published="TRUE"/>
+						<Item TrainingEN="Training 2" TrainingDE="Schulung 2" TrainingDescriptionEN="Description for Training 2" TrainingDescriptionDE="Beschreibung für Schulung 2" ModuleEN="Module 1" TrainingTopicsEN="Outlook" LanguageShortcut="DE" Published="TRUE"/>
+						<Item TrainingEN="Training 3" TrainingDE="Schulung 3" TrainingDescriptionEN="Description for Training 3" TrainingDescriptionDE="Beschreibung für Schulung 3" ModuleEN="Module 2" TrainingTopicsEN="Skype for Business" LanguageShortcut="DE" Published="TRUE"/>
+						<Item TrainingEN="Training 4" TrainingDE="Schulung 4" TrainingDescriptionEN="Description for Training 4" TrainingDescriptionDE="Beschreibung für Schulung 4" ModuleEN="Module 2" TrainingTopicsEN="Skype for Business" LanguageShortcut="DE" Published="TRUE"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Trainers">
+					<Items>
+						<Item Trainer="Gaylord Krieger"/>
+					</Items>
+                </List>
+                <List Name="Scheduler_Dates">
+					<Items>
+						<Item DateEN="Trainingdate 1" DateDE="Schulungstermin 1" DateDescriptionEN="Description of trainingdate 1" DateDescriptionDE="Beschreibung zu Schulungstermin 1" DateDescriptionTeaserEN="Descr.trainingdate 1" DateDescriptionTeaserDE="Beschr.Schulungstermin 1" TrainingEN="Training 1" LanguageShortcut="DE" RoomName="022" Trainer="Gaylord Krieger" Duration="2" Start="18/03/2017 09:00:00" End="18/03/2017 11:00:00" MinSubscriptions="5" Published="TRUE" />
+						<Item DateEN="Trainingdate 2" DateDE="Schulungstermin 2" DateDescriptionEN="Description of trainingdate 1" DateDescriptionDE="Beschreibung zu Schulungstermin 1" DateDescriptionTeaserEN="Descr.trainingdate 2" DateDescriptionTeaserDE="Beschr.Schulungstermin 2" TrainingEN="Training 1" LanguageShortcut="DE" RoomName="022" Trainer="Gaylord Krieger" Duration="2" Start="19/03/2017 09:00:00" End="19/03/2017 11:00:00" MinSubscriptions="5" Published="FALSE" />
+						<Item DateEN="Trainingdate 3" DateDE="Schulungstermin 3" DateDescriptionEN="Description of trainingdate 1" DateDescriptionDE="Beschreibung zu Schulungstermin 1" DateDescriptionTeaserEN="Descr.trainingdate 3" DateDescriptionTeaserDE="Beschr.Schulungstermin 3" TrainingEN="Training 3" LanguageShortcut="DE" RoomName="053" Trainer="Gaylord Krieger" Duration="2" Start="20/03/2017 09:00:00" End="20/03/2017 11:00:00" MinSubscriptions="5" Published="FALSE" />
+						<Item DateEN="Trainingdate 4" DateDE="Schulungstermin 4" DateDescriptionEN="Description of trainingdate 1" DateDescriptionDE="Beschreibung zu Schulungstermin 1" DateDescriptionTeaserEN="Descr.trainingdate 4" DateDescriptionTeaserDE="Beschr.Schulungstermin 4" TrainingEN="Training 3" LanguageShortcut="DE" RoomName="022" Trainer="Gaylord Krieger" Duration="2" Start="21/03/2017 09:00:00" End="21/03/2017 11:00:00" MinSubscriptions="5" Published="FALSE" />
+					</Items>
+                </List>
+            </Lists>
+        </Website>
+    </Websites>
+	<NoImport>
+	</NoImport>
+</Scheduler>

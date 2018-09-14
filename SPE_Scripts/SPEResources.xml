@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SPE_Resources>
+    <en-US>
+        <CreatorsCompanyName>Alegri International Service GmbH - D-50668 Köln</CreatorsCompanyName>
+        <Wait-SPEForKey>Beliebige Taste zum Fortsetzen drücken...</Wait-SPEForKey>
+        <Get-SPECurrentUsersNames1>Es gibt ein Problem beim automatischen Erfassen der UserNames.</Get-SPECurrentUsersNames1>
+        <Get-SPECurrentUsersNames2>Vermutlich liegt das daran, dass die Domäne derzeit nicht erreichbar ist.</Get-SPECurrentUsersNames2>
+        <Get-SPECurrentUsersNames3>Daher bitte die Daten manuell eingeben</Get-SPECurrentUsersNames3>
+        <Get-SPECurrentUsersNames4>Bitte den Anzeigenamen eingeben</Get-SPECurrentUsersNames4>
+        <Get-SPECurrentUsersNames5>Bitte den Vornamen eingeben</Get-SPECurrentUsersNames5>
+        <Get-SPECurrentUsersNames6>Bitte den Nachnamen eingeben</Get-SPECurrentUsersNames6>
+        <Get-SPECurrentUsersNames7>Fehler bei automatischer Erfassung der Benutzerdaten in 'Get-SPECurrentUsersNames'.</Get-SPECurrentUsersNames7>
+        <Exit-SPEOnCtrlC>Strg-c wurde gedrückt</Exit-SPEOnCtrlC>
+        <Edit-SPEScript1>Folgende Scripts stehen zur Auswahl:</Edit-SPEScript1>
+        <Edit-SPEScript2>Modul SPE.Common</Edit-SPEScript2>
+        <Edit-SPEScript3>Modul SPE.SharePoint</Edit-SPEScript3>
+        <Edit-SPEScript4>Module und XML-Dateien</Edit-SPEScript4>
+        <Edit-SPEScript5>Ende</Edit-SPEScript5>
+        <Edit-SPEScript6>Bitte auswählen:</Edit-SPEScript6>
+        <Start-SPEScript1>Folgende Scripts stehen zur Auswahl:</Start-SPEScript1>
+        <Start-SPEScript2>Ende</Start-SPEScript2>
+        <Start-SPEScript3>Bitte auswählen:</Start-SPEScript3>
+        <Start-SPEScript4>Soll ein weiteres Script geöffnet werden?</Start-SPEScript4>
+        <Move-SPEFileSystemFolderToZIP1>ZIP-Datei</Move-SPEFileSystemFolderToZIP1>
+        <Move-SPEFileSystemFolderToZIP2>existiert bereits. Soll es Überschrieben werden?</Move-SPEFileSystemFolderToZIP2>
+        <Select-SPEYNTrue>J</Select-SPEYNTrue>
+        <Select-SPEYNFalse>N</Select-SPEYNFalse>
+        <Use-SPEChoice>Bitte nur aus den vorgegebenen Werten wählen!!</Use-SPEChoice>
+        <Edit-SPETextFileByFilterToNewFile1>Fehler in Function 'Edit-SPETextFileByFilterToNewFile': Source-File konnte unter Pfad '</Edit-SPETextFileByFilterToNewFile1>
+        <Edit-SPETextFileByFilterToNewFile2>' nicht gefunden werden.</Edit-SPETextFileByFilterToNewFile2>
+        <New-SPELogFiles>erstellt am: </New-SPELogFiles>
+        <New-SPEReportFiles1>Report für Script </New-SPEReportFiles1>
+        <New-SPEReportFiles2>erstellt am: </New-SPEReportFiles2>
+        <New-SPEInfoHeader1>Start  : </New-SPEInfoHeader1>
+        <New-SPEInfoHeader2>Aktuell: </New-SPEInfoHeader2>
+        <New-SPEInfoHeader3>Dauer  : </New-SPEInfoHeader3>
+        <Wait-SPELoop>Sekunden Wartezeit.</Wait-SPELoop>
+        <New-SPEStandardScript1>Willkomen zum Script-Generator für SPE-Standard-Scripts.</New-SPEStandardScript1>
+        <New-SPEStandardScript2>Bitte den Namen des Scripts eingeben:</New-SPEStandardScript2>
+        <New-SPEStandardScript3>Bitte die Beschreibung des Scripts eingeben:</New-SPEStandardScript3>
+        <New-SPEStandardScript4>Soll das Script für einen Kunden erstellt werden?</New-SPEStandardScript4>
+        <New-SPEStandardScript5>Bitte den Namen des Kunden eingeben:</New-SPEStandardScript5>
+        <New-SPEStandardScript7>Name    : </New-SPEStandardScript7>
+        <New-SPEStandardScript8>Funktion: </New-SPEStandardScript8>
+        <New-SPEStandardScript9>Funktion: Dieses Script dient der lokalen Bereitstellung von Script-relevanten Parametern und Variablen für das PowerShell-Script '</New-SPEStandardScript9>
+        <New-SPEStandardScript10>Kunde   : </New-SPEStandardScript10>
+        <New-SPEStandardScript11>Standardmäßig werden Log- und Report-Files im ULS-Format ausgegeben und der Infoheader aktiviert.</New-SPEStandardScript11>
+        <New-SPEStandardScript12>Ebenso werden Status- und Exception-Meldungen aus den Cmdlets des SPE-Modules in das Log geschrieben.</New-SPEStandardScript12>
+        <New-SPEStandardScript13>Soll diese Vorgabe übernommen werden?</New-SPEStandardScript13>
+        <New-SPEStandardScript14>Soll das Logging in eine SharePoint-Liste erfolgen?</New-SPEStandardScript14>
+        <New-SPEStandardScript15>Bitte die URL zur Website angeben, in der die Log-Liste liegt:</New-SPEStandardScript15>
+        <New-SPEStandardScript16>Bitte den Namen der Logliste angeben:</New-SPEStandardScript16>
+        <New-SPEStandardScript17>Soll das Logging auf die Console erfolgen?</New-SPEStandardScript17>
+        <New-SPEStandardScript18>Soll das Logging in eine Textdatei erfolgen?</New-SPEStandardScript18>
+        <New-SPEStandardScript19>Soll das Logging in ULS-File erfolgen?</New-SPEStandardScript19>
+        <New-SPEStandardScript20>Soll das Reporting in eine Textdatei erfolgen?</New-SPEStandardScript20>
+        <New-SPEStandardScript21>Soll das Reporting in eine ULS-Datei erfolgen?</New-SPEStandardScript21>
+        <New-SPEStandardScript22>Soll bei Consolen-Ausgabe der InfoHeader genutzt werden?</New-SPEStandardScript22>
+        <New-SPEStandardScript23>Sollen allgemeine Meldungen der SPE-Cmdlets in das Log geschrieben werden?</New-SPEStandardScript23>
+        <New-SPEStandardScript24>Sollen Status-Meldungen der SPE-Cmdlets in das Log geschrieben werden?</New-SPEStandardScript24>
+        <New-SPEStandardScript25>Sollen Exception-Meldungen der SPE-Cmdlets in das Log geschrieben werden?</New-SPEStandardScript25>
+        <New-SPEStandardScript26>Soll der TestModus aktiviert werden?</New-SPEStandardScript26>
+        <New-SPEStandardScript27>Sind für die Ausführung des Scripts voraussichtlich Administrator-Berechtigungen erforderlich?</New-SPEStandardScript27>
+        <New-SPEStandardScript28>Soll für das Script eine DOS-Batch-Datei erstellt werden?</New-SPEStandardScript28>
+        <New-SPEStandardScript29>PowerShell-Script '</New-SPEStandardScript29>
+        <New-SPEStandardScript30>' wurde erfolgreich erstellt und unter '</New-SPEStandardScript30>
+        <New-SPEStandardScript31>' abgelegt.</New-SPEStandardScript31>
+        <Update-SPEConfigVariable>Das ist eine Beispiel-Variable</Update-SPEConfigVariable>
+        <SPEConfig1>ScriptVariablen</SPEConfig1>
+        <SPEConfig2>Wert</SPEConfig2>
+        <SPEConfig3>Beschreibung</SPEConfig3>
+        <Get-SPEADUsersFromADContainerErrorInfo>Error at receiving AD-Usern in Function 'Get-SPEADUsersFromADContainer'</Get-SPEADUsersFromADContainerErrorInfo>
+        <StandardScriptLogToConsoleDeactivated>Logging to Console is deactivated.</StandardScriptLogToConsoleDeactivated>
+        <StandardScriptLogToLogFileActivated>Logging appears to Logfile.
+Logfile will be opened after Script has finished.
+</StandardScriptLogToLogFileActivated>
+        <StandardScriptLogToULSFileActivated>Logging appears to ULSfile.
+Please check ULSfile with ULSViewer.
+</StandardScriptLogToULSFileActivated>
+        <StandardScriptNeedToRunAsAdmin>Script needs to be run with elevated priviligues and has been opened in a new console window. This window will be closed automatically.</StandardScriptNeedToRunAsAdmin>
+        <StandardScriptGeneralErrorInScript>General error in Script.</StandardScriptGeneralErrorInScript>
+        <StandardScriptTerminatedByCtrlC>Script has been naually aborted by Ctrl-C.</StandardScriptTerminatedByCtrlC>
+        <StandardScriptAborted>Script has been aborted. Check Log(s)</StandardScriptAborted>
+        <StandardScriptFinishedWithErrors>Script has finished with errors. Check Log(s)</StandardScriptFinishedWithErrors>
+        <StandardScriptFinishedWithoutErrors>Script has successfully finished without any error.</StandardScriptFinishedWithoutErrors>
+        <StandardScriptTestModeActive1>!!!Caution!!! TestMode active !!! No data will be written or deleted !!</StandardScriptTestModeActive1>
+        <StandardScriptTestModeActive2>!!! This is only for functional testing !!!</StandardScriptTestModeActive2>
+        <StandardScriptConsoleTitle>Current Script: </StandardScriptConsoleTitle>
+        <StandardScriptHasStarted>Script has been started.</StandardScriptHasStarted>
+        <LogMessageTextInfo>Error at Info   : </LogMessageTextInfo>
+        <LogMessageTextSite>Error at SPSite : </LogMessageTextSite>
+        <LogMessageTextWeb>Error at SPWeb  : </LogMessageTextWeb>
+        <LogMessageTextList>Error at SPList : </LogMessageTextList>
+        <LogMessageTextExMessage>Exception Message : </LogMessageTextExMessage>
+        <LogMessageTextInnerException>Inner Exception   : </LogMessageTextInnerException>
+        <LogMessageTextOccured>Error occured </LogMessageTextOccured>
+        <LogMessageTextScript>in Script </LogMessageTextScript>
+        <LogMessageTextLine>in Line </LogMessageTextLine>
+        <LogMessageTextTryBlock>. Please check related TRY-Block for errors.</LogMessageTextTryBlock>
+    </en-US>
+    <de-DE>
+        <CreatorsCompanyName>Alegri International Service GmbH - D-50668 Köln</CreatorsCompanyName>
+        <Wait-SPEForKey>Beliebige Taste zum Fortsetzen drücken...</Wait-SPEForKey>
+        <Get-SPECurrentUsersNames1>Es gibt ein Problem beim automatischen Erfassen der UserNames.</Get-SPECurrentUsersNames1>
+        <Get-SPECurrentUsersNames2>Vermutlich liegt das daran, dass die Domäne derzeit nicht erreichbar ist.</Get-SPECurrentUsersNames2>
+        <Get-SPECurrentUsersNames3>Daher bitte die Daten manuell eingeben</Get-SPECurrentUsersNames3>
+        <Get-SPECurrentUsersNames4>Bitte den Anzeigenamen eingeben</Get-SPECurrentUsersNames4>
+        <Get-SPECurrentUsersNames5>Bitte den Vornamen eingeben</Get-SPECurrentUsersNames5>
+        <Get-SPECurrentUsersNames6>Bitte den Nachnamen eingeben</Get-SPECurrentUsersNames6>
+        <Get-SPECurrentUsersNames7>Fehler bei automatischer Erfassung der Benutzerdaten in 'Get-SPECurrentUsersNames'.</Get-SPECurrentUsersNames7>
+        <Exit-SPEOnCtrlC>Strg-c wurde gedrückt</Exit-SPEOnCtrlC>
+        <Edit-SPEScript1>Folgende Scripts stehen zur Auswahl:</Edit-SPEScript1>
+        <Edit-SPEScript2>Modul SPE.Common</Edit-SPEScript2>
+        <Edit-SPEScript3>Modul SPE.SharePoint</Edit-SPEScript3>
+        <Edit-SPEScript4>Module und XML-Dateien</Edit-SPEScript4>
+        <Edit-SPEScript5>Ende</Edit-SPEScript5>
+        <Edit-SPEScript6>Bitte auswählen:</Edit-SPEScript6>
+        <Start-SPEScript1>Folgende Scripts stehen zur Auswahl:</Start-SPEScript1>
+        <Start-SPEScript2>Ende</Start-SPEScript2>
+        <Start-SPEScript3>Bitte auswählen:</Start-SPEScript3>
+        <Start-SPEScript4>Soll ein weiteres Script geöffnet werden?</Start-SPEScript4>
+        <Move-SPEFileSystemFolderToZIP1>ZIP-Datei</Move-SPEFileSystemFolderToZIP1>
+        <Move-SPEFileSystemFolderToZIP2>existiert bereits. Soll es Überschrieben werden?</Move-SPEFileSystemFolderToZIP2>
+        <Select-SPEYNTrue>J</Select-SPEYNTrue>
+        <Select-SPEYNFalse>N</Select-SPEYNFalse>
+        <Use-SPEChoice>Bitte nur aus den vorgegebenen Werten wählen!!</Use-SPEChoice>
+        <Edit-SPETextFileByFilterToNewFile1>Fehler in Function 'Edit-SPETextFileByFilterToNewFile': Source-File konnte unter Pfad '</Edit-SPETextFileByFilterToNewFile1>
+        <Edit-SPETextFileByFilterToNewFile2>' nicht gefunden werden.</Edit-SPETextFileByFilterToNewFile2>
+        <New-SPELogFiles>erstellt am: </New-SPELogFiles>
+        <New-SPEReportFiles1>Report für Script </New-SPEReportFiles1>
+        <New-SPEReportFiles2>erstellt am: </New-SPEReportFiles2>
+        <New-SPEInfoHeader1>Start  : </New-SPEInfoHeader1>
+        <New-SPEInfoHeader2>Aktuell: </New-SPEInfoHeader2>
+        <New-SPEInfoHeader3>Dauer  : </New-SPEInfoHeader3>
+        <Wait-SPELoop>Sekunden Wartezeit.</Wait-SPELoop>
+        <New-SPEStandardScript1>Willkomen zum Script-Generator für SPE-Standard-Scripts.</New-SPEStandardScript1>
+        <New-SPEStandardScript2>Bitte den Namen des Scripts eingeben:</New-SPEStandardScript2>
+        <New-SPEStandardScript3>Bitte die Beschreibung des Scripts eingeben:</New-SPEStandardScript3>
+        <New-SPEStandardScript4>Soll das Script für einen Kunden erstellt werden?</New-SPEStandardScript4>
+        <New-SPEStandardScript5>Bitte den Namen des Kunden eingeben:</New-SPEStandardScript5>
+        <New-SPEStandardScript6>Alegri International Service GmbH - D-50668 Köln</New-SPEStandardScript6>
+        <New-SPEStandardScript7>Name    : </New-SPEStandardScript7>
+        <New-SPEStandardScript8>Funktion: </New-SPEStandardScript8>
+        <New-SPEStandardScript9>Funktion: Dieses Script dient der lokalen Bereitstellung von Script-relevanten Parametern und Variablen für das PowerShell-Script '</New-SPEStandardScript9>
+        <New-SPEStandardScript10>Kunde   : </New-SPEStandardScript10>
+        <New-SPEStandardScript11>Standardmäßig werden Log- und Report-Files im ULS-Format ausgegeben und der Infoheader aktiviert.</New-SPEStandardScript11>
+        <New-SPEStandardScript12>Ebenso werden Status- und Exception-Meldungen aus den Cmdlets des SPE-Modules in das Log geschrieben.</New-SPEStandardScript12>
+        <New-SPEStandardScript13>Soll diese Vorgabe übernommen werden?</New-SPEStandardScript13>
+        <New-SPEStandardScript14>Soll das Logging in eine SharePoint-Liste erfolgen?</New-SPEStandardScript14>
+        <New-SPEStandardScript15>Bitte die URL zur Website angeben, in der die Log-Liste liegt:</New-SPEStandardScript15>
+        <New-SPEStandardScript16>Bitte den Namen der Logliste angeben:</New-SPEStandardScript16>
+        <New-SPEStandardScript17>Soll das Logging auf die Console erfolgen?</New-SPEStandardScript17>
+        <New-SPEStandardScript18>Soll das Logging in eine Textdatei erfolgen?</New-SPEStandardScript18>
+        <New-SPEStandardScript19>Soll das Logging in ULS-File erfolgen?</New-SPEStandardScript19>
+        <New-SPEStandardScript20>Soll das Reporting in eine Textdatei erfolgen?</New-SPEStandardScript20>
+        <New-SPEStandardScript21>Soll das Reporting in eine ULS-Datei erfolgen?</New-SPEStandardScript21>
+        <New-SPEStandardScript22>Soll bei Consolen-Ausgabe der InfoHeader genutzt werden?</New-SPEStandardScript22>
+        <New-SPEStandardScript23>Sollen allgemeine Meldungen der SPE-Cmdlets in das Log geschrieben werden?</New-SPEStandardScript23>
+        <New-SPEStandardScript24>Sollen Status-Meldungen der SPE-Cmdlets in das Log geschrieben werden?</New-SPEStandardScript24>
+        <New-SPEStandardScript25>Sollen Exception-Meldungen der SPE-Cmdlets in das Log geschrieben werden?</New-SPEStandardScript25>
+        <New-SPEStandardScript26>Soll der TestModus aktiviert werden?</New-SPEStandardScript26>
+        <New-SPEStandardScript27>Sind für die Ausführung des Scripts voraussichtlich Administrator-Berechtigungen erforderlich?</New-SPEStandardScript27>
+        <New-SPEStandardScript28>Soll für das Script eine DOS-Batch-Datei erstellt werden?</New-SPEStandardScript28>
+        <New-SPEStandardScript29>PowerShell-Script '</New-SPEStandardScript29>
+        <New-SPEStandardScript30>' wurde erfolgreich erstellt und unter '</New-SPEStandardScript30>
+        <New-SPEStandardScript31>' abgelegt.</New-SPEStandardScript31>
+        <Update-SPEConfigVariable>Das ist eine Beispiel-Variable</Update-SPEConfigVariable>
+        <SPEConfig1>ScriptVariablen</SPEConfig1>
+        <SPEConfig2>Wert</SPEConfig2>
+        <SPEConfig3>Beschreibung</SPEConfig3>
+        <Get-SPEADUsersFromADContainerErrorInfo>Fehler bei Erfassen von AD-Usern in der Function 'Get-SPEADUsersFromADContainer'</Get-SPEADUsersFromADContainerErrorInfo>
+        <StandardScriptLogToConsoleDeactivated>Logging auf Console ist deaktiviert.</StandardScriptLogToConsoleDeactivated>
+        <StandardScriptLogToLogFileActivated>Logging erfolgt in Logfile.
+Logfile wird am Ende des Scripts geöffnet.
+</StandardScriptLogToLogFileActivated>
+        <StandardScriptLogToULSFileActivated>Logging erfolgt in ULSfile.
+ULSfile bitte mit dem ULSViewer prüfen.
+</StandardScriptLogToULSFileActivated>
+        <StandardScriptNeedToRunAsAdmin>Das Script muss mit Administrator-Berechtigungen ausgeführt werden und wurde daher in einem neuen Konsolen-Fenster neu gestartet. Dieses Fenster wird geschlossen.</StandardScriptNeedToRunAsAdmin>
+        <StandardScriptGeneralErrorInScript>Allgemeiner Fehler im Script.</StandardScriptGeneralErrorInScript>
+        <StandardScriptTerminatedByCtrlC>Script wurde durch Strg-C abgebrochen.</StandardScriptTerminatedByCtrlC>
+        <StandardScriptAborted>Script wurde abgebrochen. Bitte Log(s) überprüfen.</StandardScriptAborted>
+        <StandardScriptFinishedWithErrors>Script wurde mit Fehlern beendet. Bitte Log(s) überprüfen.</StandardScriptFinishedWithErrors>
+        <StandardScriptFinishedWithoutErrors>Script wurde erfolgreich und ohne Fehler beendet.</StandardScriptFinishedWithoutErrors>
+        <StandardScriptTestModeActive1>!!!Achtung!!! TestModus aktiv !!! Es werden keine Daten gelöscht oder geschrieben !!</StandardScriptTestModeActive1>
+        <StandardScriptTestModeActive2>!!! Dient nur zum reinen Funktionstest !!!</StandardScriptTestModeActive2>
+        <StandardScriptConsoleTitle>Aktuelles Script: </StandardScriptConsoleTitle>
+        <StandardScriptHasStarted>Script wurde gestartet.</StandardScriptHasStarted>
+        <LogMessageTextInfo>Fehler bei Info   : </LogMessageTextInfo>
+        <LogMessageTextSite>Fehler bei SPSite : </LogMessageTextSite>
+        <LogMessageTextWeb>Fehler bei SPWeb  : </LogMessageTextWeb>
+        <LogMessageTextList>Fehler bei SPList : </LogMessageTextList>
+        <LogMessageTextExMessage>Exception Message : </LogMessageTextExMessage>
+        <LogMessageTextInnerException>Inner Exception   : </LogMessageTextInnerException>
+        <LogMessageTextOccured>Fehler trat auf </LogMessageTextOccured>
+        <LogMessageTextScript>in Script </LogMessageTextScript>
+        <LogMessageTextLine>in Zeile </LogMessageTextLine>
+        <LogMessageTextTryBlock>. Bitte in vorgeschaltetem TRY-Block nach Fehler suchen.</LogMessageTextTryBlock>
+    </de-DE>
+</SPE_Resources>

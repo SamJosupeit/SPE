@@ -1,0 +1,2 @@
+@ECHO OFF
+"C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe" /ExecutionPolicy ByPass /NoProfile /command "& {cd c:\spe_scripts; import-module .\Modules\SPE.Common\SPE.Common.psd1; Edit-SPEScript}"
